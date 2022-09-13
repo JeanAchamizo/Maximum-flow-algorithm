@@ -111,6 +111,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CaminoMax.h" />
+    <ClInclude Include="Etiqueta.h" />
+    <ClInclude Include="Grafos.h" />
+    <ClInclude Include="Matriz.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
