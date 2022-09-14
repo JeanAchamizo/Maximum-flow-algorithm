@@ -112,9 +112,43 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CaminoMax.h" />
+    <ClInclude Include="Dependencias.h" />
     <ClInclude Include="Etiqueta.h" />
+    <ClInclude Include="frmAbout.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmMenu.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmStart.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmTheory.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Grafos.h" />
     <ClInclude Include="Matriz.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenu.resx">
+      <DependentUpon>frmMenu.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTheory.resx">
+      <DependentUpon>frmTheory.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
