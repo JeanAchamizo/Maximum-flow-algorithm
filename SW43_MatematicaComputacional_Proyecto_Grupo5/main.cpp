@@ -12,9 +12,9 @@ int main() {
 	//Application::Run(gcnew MyForm(2));
 
 
-	Matriz* matriz = new Matriz(7);
+	//Matriz* matriz = new Matriz(7);
 	
-	matriz->MostrarMatriz();
+	//matriz->MostrarMatriz();
 	
 	cout << endl;
 	system("pause > 0");

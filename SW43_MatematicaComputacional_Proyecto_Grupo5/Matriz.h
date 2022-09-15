@@ -2,13 +2,16 @@
 #include "iostream"
 
 //Metodo AsignarVertice - Contructor Parametro de la matriz dependiendo grafos
+
+
 using namespace std;
 
+template<typename S>
 class Matriz {
 private:
 int Filas;
 int Columnas;
-bool **matriz;
+S **matriz;
 
 public:
     Matriz(int Vertices){
@@ -48,7 +51,7 @@ private:
 
             matriz = new bool*[Filas];
         for(int i=0;i<Filas;i++){
-            matriz[i] =  new bool[Columnas];
+            matriz[i] =  new S[Columnas];
          }
     
         for(int i=0;i<Filas;i++){
