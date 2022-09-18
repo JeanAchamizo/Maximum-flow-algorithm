@@ -13,7 +13,7 @@ private:
 
 public:
 	CaminoMax() {
-		grafo = new Grafos(8);
+		grafo = new Grafos(7);
 		FlujoInfinito = Ki = grafo->EntradaMaxima();
 
 	}

@@ -31,9 +31,15 @@ public:
         }
         // Nodos Para Truncar la prueba
 
-        //Ejercicios 
+        //Ejercicios
+        
+        //Prueba1();
+        Prueba2();
+        //Prueba3();
 
+    }
 
+    void Prueba1() {
         //1er EJERCICIO
         //URL: https://youtu.be/T4jlNZjCaWk
 
@@ -41,31 +47,32 @@ public:
         MatrizAdyacente->ObtPosicion(0, 1)->AsigCapacidad(6);
         MatrizAdyacente->ObtPosicion(0, 2)->AsigCapacidad(4);
         MatrizAdyacente->ObtPosicion(0, 3)->AsigCapacidad(1);
-
+        
         //1
         MatrizAdyacente->ObtPosicion(1, 4)->AsigCapacidad(4);
-
+        
         //2
         MatrizAdyacente->ObtPosicion(2, 3)->AsigCapacidad(3);
         MatrizAdyacente->ObtPosicion(2, 4)->AsigCapacidad(1);
         MatrizAdyacente->ObtPosicion(2, 5)->AsigCapacidad(3);
-
+        
         //3
-        MatrizAdyacente->ObtPosicion(3, 5)->AsigCapacidad(4);
-
+        //MatrizAdyacente->ObtPosicion(3, 5)->AsigCapacidad(4);
+        
         //4
         MatrizAdyacente->ObtPosicion(4, 6)->AsigCapacidad(4);
-
+        
         //5
         MatrizAdyacente->ObtPosicion(5, 6)->AsigCapacidad(9);
 
         //Flujo Máximo: 9
+    }
 
-
+    void Prueba2() {
         //2do EJERCICIO
-        //URL: https://www.youtube.com/watch?v=fDZEwnucLOQ
+       //URL: https://www.youtube.com/watch?v=fDZEwnucLOQ
 
-        //0
+       //0
         MatrizAdyacente->ObtPosicion(0, 1)->AsigCapacidad(8);
         MatrizAdyacente->ObtPosicion(0, 2)->AsigCapacidad(7);
         MatrizAdyacente->ObtPosicion(0, 3)->AsigCapacidad(6);
@@ -88,40 +95,40 @@ public:
         MatrizAdyacente->ObtPosicion(5, 6)->AsigCapacidad(2);
 
         //Flujo Máximo: 14
+    }
 
-
-        //3er EJERCICIO 
-        //URL: https://www.youtube.com/watch?v=uUpv4gs-l18
-
-        //0
-        MatrizAdyacente->ObtPosicion(0,1)->AsigCapacidad(10);
-        MatrizAdyacente->ObtPosicion(0,2)->AsigCapacidad(8);
-        MatrizAdyacente->ObtPosicion(0,3)->AsigCapacidad(12);
-
-        //1
-        MatrizAdyacente->ObtPosicion(1,4)->AsigCapacidad(12);
-        MatrizAdyacente->ObtPosicion(1,5)->AsigCapacidad(18);
-        
-        //2
-        MatrizAdyacente->ObtPosicion(2,5)->AsigCapacidad(15);
-
-        //3
-        MatrizAdyacente->ObtPosicion(3,5)->AsigCapacidad(12);
-        MatrizAdyacente->ObtPosicion(3,6)->AsigCapacidad(8);
-
-        //4
-        MatrizAdyacente->ObtPosicion(4,7)->AsigCapacidad(13);
-
-        //5
-        MatrizAdyacente->ObtPosicion(5,4)->AsigCapacidad(10);
-        MatrizAdyacente->ObtPosicion(5,6)->AsigCapacidad(10);
-        MatrizAdyacente->ObtPosicion(5,7)->AsigCapacidad(9);
-
-        //6
-        MatrizAdyacente->ObtPosicion(6,7)->AsigCapacidad(14);
-
-        //Flujo Máximo: 30
-
+    void Prueba3() {
+       //3er EJERCICIO 
+       ////URL: https://www.youtube.com/watch?v=uUpv4gs-l18
+       
+       //0
+       MatrizAdyacente->ObtPosicion(0,1)->AsigCapacidad(10);
+       MatrizAdyacente->ObtPosicion(0,2)->AsigCapacidad(8);
+       MatrizAdyacente->ObtPosicion(0,3)->AsigCapacidad(12);
+       
+       //1
+       MatrizAdyacente->ObtPosicion(1,4)->AsigCapacidad(12);
+       MatrizAdyacente->ObtPosicion(1,5)->AsigCapacidad(18);
+       
+       //2
+       MatrizAdyacente->ObtPosicion(2,5)->AsigCapacidad(15);
+       
+       //3
+       MatrizAdyacente->ObtPosicion(3,5)->AsigCapacidad(12);
+       MatrizAdyacente->ObtPosicion(3,6)->AsigCapacidad(8);
+       
+       //4
+       MatrizAdyacente->ObtPosicion(4,7)->AsigCapacidad(13);
+       
+       //5
+       MatrizAdyacente->ObtPosicion(5,4)->AsigCapacidad(10);
+       MatrizAdyacente->ObtPosicion(5,6)->AsigCapacidad(10);
+       MatrizAdyacente->ObtPosicion(5,7)->AsigCapacidad(9);
+       
+       //6
+       MatrizAdyacente->ObtPosicion(6,7)->AsigCapacidad(14);
+       
+       //Flujo Máximo: 30
     }
     
     void MostrarMatriz() {
