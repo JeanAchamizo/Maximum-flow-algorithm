@@ -136,10 +136,10 @@ public:
        //URL: https://www.youtube.com/watch?v=fDZEwnucLOQ
 
        //0
-        MatrizAdyacente->ObtPosicion(0, 1)->AsigCapacidad(8);
         MatrizAdyacente->ObtPosicion(0, 4)->AsigCapacidad(3);
 
         //1
+        MatrizAdyacente->ObtPosicion(1, 0)->AsigCapacidad(8);
         MatrizAdyacente->ObtPosicion(1, 2)->AsigCapacidad(7);
         MatrizAdyacente->ObtPosicion(1, 3)->AsigCapacidad(6);
 
@@ -155,7 +155,9 @@ public:
         MatrizAdyacente->ObtPosicion(4, 5)->AsigCapacidad(9);
 
         //5
-        MatrizAdyacente->ObtPosicion(5, 6)->AsigCapacidad(2);
+        
+        //6
+        MatrizAdyacente->ObtPosicion(6, 5)->AsigCapacidad(2);
 
         //Flujo Máximo: 14
     }
