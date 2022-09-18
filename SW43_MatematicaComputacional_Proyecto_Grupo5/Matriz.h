@@ -1,64 +1,40 @@
 #pragma once
-#include "iostream"
+#include "Arcos.h"
 
-//Metodo AsignarVertice - Contructor Parametro de la matriz dependiendo grafos
-
-
-using namespace std;
-
-template<typename S>
 class Matriz {
 private:
-int Filas;
-int Columnas;
-S **matriz;
+    int Filas;
+    int Columnas;
+    Arcos*** matriz;
 
 public:
-    Matriz(int Vertices){
-        Filas = Columnas = Vertices;
+    Matriz(int filas, int columnas) {
+        Filas = filas;
+        Columnas = columnas;
         InstanciarMatriz();
-    }                        
-    ~Matriz(){
-        for(int i=0;i<Filas;i++){
+    }
+    ~Matriz() {
+        for (int i = 0; i < Filas; i++) {
             delete matriz[i];
-         }
-         delete matriz; 
+        }
+        delete[]matriz;
     }
-    void AsignarValor(bool value){}
-    //Test Cod
-    void MostrarMatriz(){
-            matriz[0][1] = 1;
-            matriz[0][2] = 1;
-            matriz[0][3] = 1;
-            matriz[1][2] = 1;
-            matriz[1][4] = 1;
-            matriz[2][3] = 1;
-            matriz[2][4] = 1;
-            matriz[2][5] = 1;
-            matriz[3][5] = 1;
-            matriz[4][6] = 1;
-            matriz[5][4] = 1;
-            matriz[5][6] = 1;           
-        for(int i=0;i<Filas;i++){
-            for(int j=0;j<Columnas;j++){
-                cout<<matriz[i][j]<<" ";   
-            }  
-            cout<<endl; 
+    void AsignarValorPosicion(int Fil, int Col, Arcos* value) {
+        if (Fil >= Filas || Col >= Columnas || Fil < 0 || Col < 0)return;
+        matriz[Fil][Col] = value;
+    }
+    Arcos* ObtPosicion(int F, int C) {
+        return (matriz[F][C]);
+    };
+    void InstanciarMatriz() {
+        matriz = new Arcos * *[Filas];
+        for (int i = 0; i < Filas; i++) {
+            matriz[i] = new Arcos * [Columnas];
+        }
+        for (int i = 0; i < Filas; i++) {
+            for (int j = 0; j < Columnas; j++) {
+                matriz[i][j] = NULL;
+            }
         }
     }
-private:
-    void InstanciarMatriz(){
-
-            matriz = new bool*[Filas];
-        for(int i=0;i<Filas;i++){
-            matriz[i] =  new S[Columnas];
-         }
-    
-        for(int i=0;i<Filas;i++){
-            for(int j=0;j<Columnas;j++){
-                 matriz[i][j] = 0;   
-            }   
-        }
-    }
-
 };
