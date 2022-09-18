@@ -31,7 +31,7 @@ int main() {
 		system("cls");
 		cout << endl;
 		solucion->ObtGrafo()->MostrarMatriz();
-		solucion->EncontrarCamino(0, 0, 6);
+		solucion->EncontrarCamino(0, 0, 7);
 		cout << endl;
 		solucion->MostrarCamino();
 		cout << endl;

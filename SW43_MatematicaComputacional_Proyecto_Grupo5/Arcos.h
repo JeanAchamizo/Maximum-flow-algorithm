@@ -10,8 +10,8 @@ public:
 	Arcos(int indI,int indJ){
 		i = indI;
 		j = indJ;
-		Capacidad = 0;
-		Acumulados = 0;
+		Capacidad = 00;
+		Acumulados = 00;
 		Existe = false;
 	}
 	~Arcos(){}
