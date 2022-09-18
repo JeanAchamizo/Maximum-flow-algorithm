@@ -57,7 +57,7 @@ public:
         MatrizAdyacente->ObtPosicion(2, 5)->AsigCapacidad(3);
         
         //3
-        //MatrizAdyacente->ObtPosicion(3, 5)->AsigCapacidad(4);
+        MatrizAdyacente->ObtPosicion(3, 5)->AsigCapacidad(4);
         
         //4
         MatrizAdyacente->ObtPosicion(4, 6)->AsigCapacidad(4);
