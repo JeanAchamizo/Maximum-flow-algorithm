@@ -34,9 +34,9 @@ public:
         //Ejercicios
         
         //Prueba1();
-        Prueba2();
+        //Prueba2();
         //Prueba3();
-
+        Prueba4();
     }
 
     void Prueba1() {
@@ -131,6 +131,35 @@ public:
        //Flujo Máximo: 30
     }
     
+    void Prueba4() {
+        //4to EJERCICIO
+       //URL: https://www.youtube.com/watch?v=fDZEwnucLOQ
+
+       //0
+        MatrizAdyacente->ObtPosicion(0, 1)->AsigCapacidad(8);
+        MatrizAdyacente->ObtPosicion(0, 4)->AsigCapacidad(3);
+
+        //1
+        MatrizAdyacente->ObtPosicion(1, 2)->AsigCapacidad(7);
+        MatrizAdyacente->ObtPosicion(1, 3)->AsigCapacidad(6);
+
+        //2
+        MatrizAdyacente->ObtPosicion(2, 4)->AsigCapacidad(4);
+        MatrizAdyacente->ObtPosicion(2, 5)->AsigCapacidad(5);
+
+        //3
+        MatrizAdyacente->ObtPosicion(3, 2)->AsigCapacidad(3);
+        MatrizAdyacente->ObtPosicion(3, 6)->AsigCapacidad(2);
+
+        //4
+        MatrizAdyacente->ObtPosicion(4, 5)->AsigCapacidad(9);
+
+        //5
+        MatrizAdyacente->ObtPosicion(5, 6)->AsigCapacidad(2);
+
+        //Flujo Máximo: 14
+    }
+
     void MostrarMatriz() {
 
         for (int i = 0; i < Vertices;i++) {
