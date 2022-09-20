@@ -147,6 +147,9 @@
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmStart.resx">
+      <DependentUpon>frmStart.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTheory.resx">
       <DependentUpon>frmTheory.h</DependentUpon>
     </EmbeddedResource>
