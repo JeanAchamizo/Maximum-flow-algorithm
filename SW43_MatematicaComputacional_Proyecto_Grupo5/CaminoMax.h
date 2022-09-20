@@ -17,7 +17,15 @@ public:
 		FlujoInfinito = Ki = grafo->EntradaMaxima();
 
 	}
+
+	CaminoMax(Grafos* Grafo) {
+		grafo = Grafo;
+		FlujoInfinito = Ki = grafo->EntradaMaxima();
+	}
+
+
 	~CaminoMax() {
+		Recorrido.clear();
 		delete grafo;
 	}
 	
@@ -82,5 +90,7 @@ public:
 	Grafos* ObtGrafo() {
 		return grafo;
 	}
+
+
 
 };

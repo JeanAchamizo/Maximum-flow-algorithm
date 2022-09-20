@@ -164,18 +164,21 @@ public:
 
     void MostrarMatriz() {
 
-        for (int i = 0; i < Vertices;i++) {
-            cout << "     "<<i;
+        for (int i = 0; i < Vertices; i++) {
+            cout << "       " << i;
         }
         cout << endl;
-        for (int i = 0; i < Vertices;i++) {
-            cout << " "<<i<<" ";
-            for (int j = 0; j < Vertices;j++) {
-              cout << "[" << MatrizAdyacente->ObtPosicion(i, j)->ObtCapacidad() << ";";
-              cout << MatrizAdyacente->ObtPosicion(i,j)->ObtAcumulados() <<"] ";
-           }
+
+        for (int i = 0; i < Vertices; i++) {
+            cout << " " << i << " ";
+            for (int j = 0; j < Vertices; j++) {
+                cout << "[" << MatrizAdyacente->ObtPosicion(i, j)->ObtCapacidad() << ";"
+                << MatrizAdyacente->ObtPosicion(i, j)->ObtAcumulados() << ";" << MatrizAdyacente->ObtPosicion(i, j)->ExisteArco()
+                    << "] ";
+            }
             cout << endl;
         }
+
     }
     int EntradaMaxima() {
         int Max = 0;
@@ -190,6 +193,7 @@ public:
     }
 
     int NumAristas() { return Vertices;}
+
     Matriz* matriz() {
         return MatrizAdyacente;
     }
