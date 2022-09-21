@@ -8,24 +8,15 @@ using namespace SW43MatematicaComputacionalProyectoGrupo5;
 
 int main() {
 
-	Application::Run(gcnew frmMenu);
+	//Application::Run(gcnew frmMenu);
 	//Application::Run(gcnew MyForm(1));
 	//Application::Run(gcnew MyForm(2));
 
 	CaminoMax* solucion;
 	solucion = new CaminoMax;
 	
-	 while (true) {
-		system("cls");
-		cout << endl;
-		solucion->ObtGrafo()->MostrarMatriz();
-		solucion->EncontrarCamino(1, 0, 5);
-		cout << endl;
-		solucion->MostrarCamino();
-		cout << endl;
-		solucion->ObtGrafo()->MostrarMatriz();
-		system("pause > 0");
-	};
+
+	solucion->MosrtrarCaminoMaximo(1,5);
 
 	
 

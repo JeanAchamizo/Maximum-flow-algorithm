@@ -165,15 +165,16 @@ public:
     void MostrarMatriz() {
 
         for (int i = 0; i < Vertices; i++) {
-            cout << "       " << i;
+            cout << "     " << i;
         }
         cout << endl;
 
         for (int i = 0; i < Vertices; i++) {
             cout << " " << i << " ";
             for (int j = 0; j < Vertices; j++) {
-                cout << "[" << MatrizAdyacente->ObtPosicion(i, j)->ObtCapacidad() << ";"
-                << MatrizAdyacente->ObtPosicion(i, j)->ObtAcumulados() << ";" << MatrizAdyacente->ObtPosicion(i, j)->ExisteArco()
+                cout << "[" << MatrizAdyacente->ObtPosicion(i, j)->ObtCapacidad() 
+                << ";"<< MatrizAdyacente->ObtPosicion(i, j)->ObtAcumulados() 
+                //<< ";" << MatrizAdyacente->ObtPosicion(i, j)->ExisteArco()
                     << "] ";
             }
             cout << endl;

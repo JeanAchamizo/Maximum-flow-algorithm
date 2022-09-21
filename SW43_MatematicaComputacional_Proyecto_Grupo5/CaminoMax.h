@@ -12,13 +12,17 @@ private:
 	vector<Circulo*> nodos;
 
 	Grafos* grafo;
-	int Ki,FlujoInfinito;
+	int Ki,FlujoInfinito,FlujoMaximo;
 	
 
 public:
 	CaminoMax() {
+
+		//cambiar aqui
 		grafo = new Grafos(7);
 		FlujoInfinito = Ki = grafo->EntradaMaxima();
+		FlujoMaximo =0;
+
 
 	}
 
@@ -102,11 +106,18 @@ public:
 				grafo->matriz()->ObtPosicion(Recorrido[i]->IndI(),
 				Recorrido[i]->IndJ())->AsigAcumulados(grafo->matriz()->ObtPosicion(Recorrido[i]->IndI(),
 				Recorrido[i]->IndJ())->ObtAcumulados() + Ki);
-				
+			if (Recorrido.size()==i+1) {
+
+			cout << " ===== "<< Ki;
+			cout << endl;
+			FlujoMaximo = FlujoMaximo + Ki;
+
+			}
 		}
 		///Actualizar
 		Recorrido.clear();
 		Ki = FlujoInfinito;
+
 	}
 
 	void AcumularKi(Arcos* arcos,int fila,int j) {
@@ -114,6 +125,34 @@ public:
 			Ki = (arcos->ObtCapacidad() - arcos->ObtAcumulados());
 		}
 		Recorrido.push_back(new Arcos(fila, j));
+	}
+
+	void MosrtrarCaminoMaximo(int Inicio,int Final) {
+
+		bool TerminoRecorrido=false;
+
+			grafo->MostrarMatriz();
+			cout << endl;
+		do {
+			
+			EncontrarCamino(Inicio, 0, Final);
+				TerminoRecorrido = true;
+				MostrarCamino();
+
+			for (int i = 0; i < grafo->NumAristas(); i++) {
+
+				if (grafo->matriz()->ObtPosicion(Inicio, i)->ExisteArco()) {
+					TerminoRecorrido = false;
+				}
+			}
+
+		} while (!TerminoRecorrido);
+
+
+			grafo->MostrarMatriz();
+			cout << endl;
+			cout << "El flujo Maximo es:" << FlujoMaximo;
+			system("pause > 0");
 	}
 
 
