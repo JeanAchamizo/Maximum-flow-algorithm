@@ -16,7 +16,7 @@ int main() {
 	solucion = new CaminoMax;
 	
 
-	solucion->MosrtrarCaminoMaximo(1,5);
+	solucion->MosrtrarCaminoMaximo(0,6);
 
 	
 

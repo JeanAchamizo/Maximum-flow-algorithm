@@ -151,7 +151,7 @@ public:
 
 			grafo->MostrarMatriz();
 			cout << endl;
-			cout << "El flujo Maximo es:" << FlujoMaximo;
+			cout << "El flujo Maximo es: " << FlujoMaximo;
 			system("pause > 0");
 	}
 

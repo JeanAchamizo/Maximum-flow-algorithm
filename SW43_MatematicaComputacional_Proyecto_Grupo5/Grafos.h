@@ -35,8 +35,7 @@ public:
         
         //Prueba1();
         //Prueba2();
-        //Prueba3();
-        Prueba4();
+        //Prueba3();  // 1  7
     }
 
     void Prueba1() {
@@ -98,40 +97,6 @@ public:
     }
 
     void Prueba3() {
-       //3er EJERCICIO 
-       ////URL: https://www.youtube.com/watch?v=uUpv4gs-l18
-       
-       //0
-       MatrizAdyacente->ObtPosicion(0,1)->AsigCapacidad(10);
-       MatrizAdyacente->ObtPosicion(0,2)->AsigCapacidad(8);
-       MatrizAdyacente->ObtPosicion(0,3)->AsigCapacidad(12);
-       
-       //1
-       MatrizAdyacente->ObtPosicion(1,4)->AsigCapacidad(12);
-       MatrizAdyacente->ObtPosicion(1,5)->AsigCapacidad(18);
-       
-       //2
-       MatrizAdyacente->ObtPosicion(2,5)->AsigCapacidad(15);
-       
-       //3
-       MatrizAdyacente->ObtPosicion(3,5)->AsigCapacidad(12);
-       MatrizAdyacente->ObtPosicion(3,6)->AsigCapacidad(8);
-       
-       //4
-       MatrizAdyacente->ObtPosicion(4,7)->AsigCapacidad(13);
-       
-       //5
-       MatrizAdyacente->ObtPosicion(5,4)->AsigCapacidad(10);
-       MatrizAdyacente->ObtPosicion(5,6)->AsigCapacidad(10);
-       MatrizAdyacente->ObtPosicion(5,7)->AsigCapacidad(9);
-       
-       //6
-       MatrizAdyacente->ObtPosicion(6,7)->AsigCapacidad(14);
-       
-       //Flujo Máximo: 30
-    }
-    
-    void Prueba4() {
         //4to EJERCICIO
        //URL: https://www.youtube.com/watch?v=fDZEwnucLOQ
 
