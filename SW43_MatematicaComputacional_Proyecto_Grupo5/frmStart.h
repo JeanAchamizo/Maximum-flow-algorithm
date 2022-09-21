@@ -1,5 +1,6 @@
 #pragma once
 #include "Dependencias.h"
+#include "CaminoMax.h"
 #include "frmMenu.h"
 
 namespace SW43MatematicaComputacionalProyectoGrupo5 {
@@ -23,6 +24,11 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+
+			solucion = new CaminoMax;
+			g = this->CreateGraphics();
+			space = BufferedGraphicsManager::Current;
+			buffer = space->Allocate(g, this->ClientRectangle);
 		}
 
 	protected:
@@ -60,6 +66,8 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	private: System::Windows::Forms::PictureBox^ btnDraw;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::PictureBox^ btnAdd;
+	private: System::ComponentModel::IContainer^ components;
+	private: System::Windows::Forms::Timer^ timer1;
 
 
 
@@ -70,7 +78,13 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+
+		CaminoMax* solucion;
+		BufferedGraphicsContext^ space;
+		BufferedGraphics^ buffer;
+
+		   Graphics^ g;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -79,6 +93,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(frmStart::typeid));
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->btnDraw = (gcnew System::Windows::Forms::PictureBox());
@@ -99,6 +114,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->btnAdd = (gcnew System::Windows::Forms::PictureBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->timer1 = (gcnew System::Windows::Forms::Timer(this->components));
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnDraw))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
@@ -137,6 +153,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->btnDraw->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->btnDraw->TabIndex = 3;
 			this->btnDraw->TabStop = false;
+			this->btnDraw->Click += gcnew System::EventHandler(this, &frmStart::btnDraw_Click);
 			this->btnDraw->MouseEnter += gcnew System::EventHandler(this, &frmStart::btnDraw_MouseEnter);
 			this->btnDraw->MouseLeave += gcnew System::EventHandler(this, &frmStart::btnDraw_MouseLeave);
 			// 
@@ -174,7 +191,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label6->Location = System::Drawing::Point(21, 139);
+			this->label6->Location = System::Drawing::Point(14, 97);
 			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(271, 17);
@@ -188,7 +205,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label5->Location = System::Drawing::Point(311, 97);
+			this->label5->Location = System::Drawing::Point(204, 149);
 			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(127, 17);
@@ -202,7 +219,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(21, 97);
+			this->label4->Location = System::Drawing::Point(14, 149);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(120, 17);
@@ -216,7 +233,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label3->Location = System::Drawing::Point(311, 55);
+			this->label3->Location = System::Drawing::Point(267, 55);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(113, 17);
@@ -230,7 +247,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(21, 55);
+			this->label2->Location = System::Drawing::Point(45, 55);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(96, 17);
@@ -243,7 +260,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->groupBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->groupBox2->ForeColor = System::Drawing::Color::DodgerBlue;
-			this->groupBox2->Location = System::Drawing::Point(15, 292);
+			this->groupBox2->Location = System::Drawing::Point(15, 306);
 			this->groupBox2->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Padding = System::Windows::Forms::Padding(2);
@@ -262,7 +279,8 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// 
 			// panel2
 			// 
-			this->panel2->Location = System::Drawing::Point(20, 29);
+			this->panel2->BackColor = System::Drawing::Color::White;
+			this->panel2->Location = System::Drawing::Point(18, 531);
 			this->panel2->Margin = System::Windows::Forms::Padding(2);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(752, 520);
@@ -274,11 +292,11 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->groupBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->groupBox3->ForeColor = System::Drawing::Color::DodgerBlue;
-			this->groupBox3->Location = System::Drawing::Point(527, 15);
+			this->groupBox3->Location = System::Drawing::Point(531, 30);
 			this->groupBox3->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox3->Name = L"groupBox3";
 			this->groupBox3->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox3->Size = System::Drawing::Size(794, 561);
+			this->groupBox3->Size = System::Drawing::Size(181, 28);
 			this->groupBox3->TabIndex = 9;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Grafo Generado";
@@ -301,11 +319,11 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->groupBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->groupBox4->ForeColor = System::Drawing::Color::DodgerBlue;
-			this->groupBox4->Location = System::Drawing::Point(527, 580);
+			this->groupBox4->Location = System::Drawing::Point(521, 590);
 			this->groupBox4->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox4->Name = L"groupBox4";
 			this->groupBox4->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox4->Size = System::Drawing::Size(573, 85);
+			this->groupBox4->Size = System::Drawing::Size(582, 75);
 			this->groupBox4->TabIndex = 11;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"Flujo Maximo";
@@ -327,7 +345,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->groupBox5->Margin = System::Windows::Forms::Padding(2);
 			this->groupBox5->Name = L"groupBox5";
 			this->groupBox5->Padding = System::Windows::Forms::Padding(2);
-			this->groupBox5->Size = System::Drawing::Size(482, 172);
+			this->groupBox5->Size = System::Drawing::Size(482, 196);
 			this->groupBox5->TabIndex = 12;
 			this->groupBox5->TabStop = false;
 			this->groupBox5->Text = L"Nodos";
@@ -335,7 +353,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// btnAdd
 			// 
 			this->btnAdd->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnAdd.Image")));
-			this->btnAdd->Location = System::Drawing::Point(386, 134);
+			this->btnAdd->Location = System::Drawing::Point(380, 91);
 			this->btnAdd->Name = L"btnAdd";
 			this->btnAdd->Size = System::Drawing::Size(84, 33);
 			this->btnAdd->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
@@ -362,7 +380,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// 
 			this->numericUpDown2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown2->Location = System::Drawing::Point(314, 139);
+			this->numericUpDown2->Location = System::Drawing::Point(301, 95);
 			this->numericUpDown2->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 99, 0, 0, 0 });
 			this->numericUpDown2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
@@ -371,11 +389,16 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->numericUpDown2->TabIndex = 10;
 			this->numericUpDown2->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			// 
+			// timer1
+			// 
+			this->timer1->Enabled = true;
+			this->timer1->Tick += gcnew System::EventHandler(this, &frmStart::timer1_Tick);
+			// 
 			// frmStart
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::Desktop;
+			this->BackColor = System::Drawing::SystemColors::Window;
 			this->ClientSize = System::Drawing::Size(1344, 681);
 			this->Controls->Add(this->groupBox5);
 			this->Controls->Add(this->groupBox4);
@@ -389,6 +412,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->Name = L"frmStart";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"frmStart";
+			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::frmStart_MouseUp);
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnDraw))->EndInit();
@@ -412,6 +436,7 @@ private: System::Void btnBack_Click(System::Object^ sender, System::EventArgs^ e
 	//this->Hide();
 	//frm->ShowDialog();
 	//this->Visible = true;
+	this->timer1->Enabled=false;
 	this->Close();
 	//pplication::Exit();
 }
@@ -432,6 +457,29 @@ private: System::Void btnAdd_MouseEnter(System::Object^ sender, System::EventArg
 }
 private: System::Void btnAdd_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	this->btnAdd->Image = System::Drawing::Image::FromFile("img\\btnAdd.png");
+}
+private: System::Void btnDraw_Click(System::Object^ sender, System::EventArgs^ e) {	
+
+		//solucion->CrearNodoMatriz(int(numericUpDown1->Value));
+	
+
+}
+
+private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
+	
+	buffer->Graphics->Clear(Color::White);
+	solucion->DibujarNodos(buffer->Graphics);
+	buffer->Render(g);
+
+}
+
+private: System::Void frmStart_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+
+
+	if (547< e->X && e->X <1299 && e->Y>40 && e->Y < 560) {
+		solucion->CrearNodos(e->X-13,e->Y-13);
+	}
+
 }
 };
 }

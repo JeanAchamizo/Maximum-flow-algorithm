@@ -1,12 +1,16 @@
 #pragma once
 #include "Dependencias.h"
 #include "Grafos.h"
+#include "Circulos.h"
+
 
 //Aplicar Algoritmo de Ford Fulkerson
 
 class CaminoMax {
 private:
 	vector<Arcos*> Recorrido;
+	vector<Circulo*> nodos;
+
 	Grafos* grafo;
 	int Ki,FlujoInfinito;
 	
@@ -17,6 +21,14 @@ public:
 		FlujoInfinito = Ki = grafo->EntradaMaxima();
 
 	}
+
+	void CrearNodoMatriz(int Value) {
+
+		grafo = new Grafos(Value);
+		FlujoInfinito = Ki = grafo->EntradaMaxima();
+
+	}
+	
 
 	CaminoMax(Grafos* Grafo) {
 		grafo = Grafo;
@@ -32,6 +44,23 @@ public:
 	// si pongo 1 es por que estoy seleccionando la el NODO a
 	//void EncontrarCamino(int i) {
 	// inicio final nodo 6
+
+	void CrearNodos(int x,int y) {
+		
+		if (grafo->NumAristas()>nodos.size()) {
+			nodos.push_back(new Circulo(x,y,nodos.size()));
+
+		}
+
+
+	}
+
+	void DibujarNodos(Graphics^g) {
+
+		for (int i = 0; i < nodos.size();i++) {
+			nodos[i]->Dibujar(g);
+		}
+	}
 
 	void EncontrarCamino(int fila, int Columna, int NodoDeLlegada) {		// 0 -- 0 = 6 // 2 -- 0 = 6// 5 -- 2 = 6
 		bool Existe = false;
@@ -86,6 +115,9 @@ public:
 		}
 		Recorrido.push_back(new Arcos(fila, j));
 	}
+
+
+
 
 	Grafos* ObtGrafo() {
 		return grafo;
