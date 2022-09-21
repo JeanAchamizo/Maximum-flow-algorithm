@@ -171,7 +171,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::SystemColors::Desktop;
-			this->ClientSize = System::Drawing::Size(1342, 681);
+			this->ClientSize = System::Drawing::Size(1344, 681);
 			this->Controls->Add(this->btnExit);
 			this->Controls->Add(this->btnAbout);
 			this->Controls->Add(this->btnTheory);
@@ -213,11 +213,14 @@ private: System::Void btnStart_Click(System::Object^ sender, System::EventArgs^ 
 	//Llamar al formulario Start
    frmStart^ frm = gcnew frmStart();
    //Esconder el formulario Menu
-   this->Hide();
+   //this->Hide();
+   this->Visible = false;
    //Mostrar el contenido del formulario Start
    frm->ShowDialog();
    //Cerrar el formulario Start
-   this->Close();
+   this->Visible = true;
+   //this->Close();
+   //Application::Exit();
 }
 
 
@@ -239,11 +242,13 @@ private: System::Void btnTheory_Click(System::Object^ sender, System::EventArgs^
 	//Llamar al formulario Theory
 	frmTheory^ frm = gcnew frmTheory();
 	//Esconder el formulario Menu
-	this->Hide();
+	this->Visible = false;
+	//this->Hide();
 	//Mostrar el contenido del formulario Theory
 	frm->ShowDialog();
 	//Cerrar el formulario Theory
-	this->Close();
+	//this->Close();
+	this->Visible = true;
 }
 
 
@@ -265,11 +270,13 @@ private: System::Void btnAbout_Click(System::Object^ sender, System::EventArgs^ 
 	//Llamar al formulario About
 	frmAbout^ frm = gcnew frmAbout();
 	//Esconder el formulario Menu
-	this->Hide();
+	this->Visible = false;
+	//this->Hide();
 	//Mostrar el contenido del formulario About
 	frm->ShowDialog();
 	//Cerrar el formulario About
-	this->Close();
+	//this->Close();
+	this->Visible = true;
 }
 	   //Evento del botón Exit
 //Evento cuando el mouse entra en el botón Exit
