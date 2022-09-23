@@ -7,7 +7,7 @@ using namespace SW43MatematicaComputacionalProyectoGrupo5;
 //#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 
 int main() {
-
+	srand(time(NULL));
 	Application::Run(gcnew frmMenu);
 	//Application::Run(gcnew MyForm(1));
 	//Application::Run(gcnew MyForm(2));

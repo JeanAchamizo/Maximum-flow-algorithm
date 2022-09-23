@@ -29,7 +29,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			g = this->CreateGraphics();
 			space = BufferedGraphicsManager::Current;
 			buffer = space->Allocate(g, this->ClientRectangle);
-			paisaje = gcnew Bitmap("img/frmStart.png");
+			paisaje = gcnew Bitmap("img/frmStart2.png");
 		}
 
 	protected:
@@ -106,9 +106,16 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
-	private: System::Windows::Forms::Label^ label2;
+
 	private: System::Windows::Forms::Button^ btnDraw;
 	private: System::Windows::Forms::Button^ btnClear;
+
+	private: System::Windows::Forms::PictureBox^ pictureBox2;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ pictureBox3;
+
+
+
 
 
 
@@ -130,10 +137,15 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->btnDraw = (gcnew System::Windows::Forms::Button());
 			this->btnClear = (gcnew System::Windows::Forms::Button());
+			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// timer1
@@ -156,7 +168,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::Snow;
-			this->label1->Location = System::Drawing::Point(38, 57);
+			this->label1->Location = System::Drawing::Point(60, 61);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(129, 16);
 			this->label1->TabIndex = 1;
@@ -164,7 +176,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(192, 57);
+			this->numericUpDown1->Location = System::Drawing::Point(233, 57);
 			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 15, 0, 0, 0 });
 			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
 			this->numericUpDown1->Name = L"numericUpDown1";
@@ -173,30 +185,17 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->numericUpDown1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 5, 0, 0, 0 });
 			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::Transparent;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label2->ForeColor = System::Drawing::Color::DodgerBlue;
-			this->label2->Location = System::Drawing::Point(23, 18);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(90, 29);
-			this->label2->TabIndex = 3;
-			this->label2->Text = L"Matriz ";
-			// 
 			// btnDraw
 			// 
-			this->btnDraw->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnDraw->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(114)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->btnDraw->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
 			this->btnDraw->FlatAppearance->BorderSize = 3;
 			this->btnDraw->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnDraw->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnDraw->ForeColor = System::Drawing::Color::Snow;
-			this->btnDraw->Location = System::Drawing::Point(292, 26);
+			this->btnDraw->Location = System::Drawing::Point(318, 26);
 			this->btnDraw->Name = L"btnDraw";
 			this->btnDraw->Size = System::Drawing::Size(89, 51);
 			this->btnDraw->TabIndex = 4;
@@ -207,8 +206,8 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// 
 			// btnClear
 			// 
-			this->btnClear->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-				static_cast<System::Int32>(static_cast<System::Byte>(64)));
+			this->btnClear->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(114)), static_cast<System::Int32>(static_cast<System::Byte>(24)),
+				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->btnClear->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
 			this->btnClear->FlatAppearance->BorderSize = 3;
 			this->btnClear->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -224,6 +223,40 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->btnClear->MouseEnter += gcnew System::EventHandler(this, &frmStart::btnClear_MouseEnter);
 			this->btnClear->MouseLeave += gcnew System::EventHandler(this, &frmStart::btnClear_MouseLeave);
 			// 
+			// pictureBox2
+			// 
+			this->pictureBox2->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.Image")));
+			this->pictureBox2->Location = System::Drawing::Point(63, 109);
+			this->pictureBox2->Name = L"pictureBox2";
+			this->pictureBox2->Size = System::Drawing::Size(433, 60);
+			this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox2->TabIndex = 7;
+			this->pictureBox2->TabStop = false;
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(41, -15);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(138, 106);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 6;
+			this->pictureBox1->TabStop = false;
+			// 
+			// pictureBox3
+			// 
+			this->pictureBox3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(170)),
+				static_cast<System::Int32>(static_cast<System::Byte>(3)));
+			this->pictureBox3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.Image")));
+			this->pictureBox3->Location = System::Drawing::Point(735, 26);
+			this->pictureBox3->Name = L"pictureBox3";
+			this->pictureBox3->Size = System::Drawing::Size(376, 51);
+			this->pictureBox3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox3->TabIndex = 8;
+			this->pictureBox3->TabStop = false;
+			// 
 			// frmStart
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -232,13 +265,15 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 				static_cast<System::Int32>(static_cast<System::Byte>(38)));
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->ClientSize = System::Drawing::Size(1291, 676);
+			this->ClientSize = System::Drawing::Size(1304, 676);
 			this->Controls->Add(this->btnClear);
 			this->Controls->Add(this->btnDraw);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->pictureBox2);
+			this->Controls->Add(this->pictureBox3);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Margin = System::Windows::Forms::Padding(2);
@@ -248,13 +283,16 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->Text = L"frmStart";
 			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::frmStart_MouseUp);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
-	buffer->Graphics->DrawImage(paisaje, Rectangle(0, 0, 1293, 684), Rectangle(0, 0, paisaje->Width, paisaje->Height), GraphicsUnit::Pixel);
+	buffer->Graphics->DrawImage(paisaje, Rectangle(0, 0, 1310, 692), Rectangle(0, 0, paisaje->Width, paisaje->Height), GraphicsUnit::Pixel);
 	//buffer->Graphics->Clear(Color::White);
 	solucion->DibujarNodos(buffer->Graphics);
 	buffer->Render(g);
@@ -269,29 +307,29 @@ private: System::Void frmStart_MouseUp(System::Object^ sender, System::Windows::
 }
 
 private: System::Void btnDraw_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	btnDraw->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-		static_cast<System::Int32>(static_cast<System::Byte>(64)));
+	btnDraw->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(114)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+		static_cast<System::Int32>(static_cast<System::Byte>(152)));
 	btnDraw->ForeColor = System::Drawing::Color::Orange;
 	btnDraw->FlatAppearance->BorderColor = System::Drawing::Color::DarkOrange;
 }
 
 private: System::Void btnDraw_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	btnDraw->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-		static_cast<System::Int32>(static_cast<System::Byte>(64)));
+	btnDraw->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(114)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+		static_cast<System::Int32>(static_cast<System::Byte>(152)));
 	btnDraw->ForeColor = System::Drawing::Color::Snow;
 	btnDraw->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
 }
 
 private: System::Void btnClear_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	btnClear->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-		static_cast<System::Int32>(static_cast<System::Byte>(64)));
+	btnClear->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(114)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+		static_cast<System::Int32>(static_cast<System::Byte>(152)));
 	btnClear->ForeColor = System::Drawing::Color::Fuchsia;
 	btnClear->FlatAppearance->BorderColor = System::Drawing::Color::BlueViolet;
 }
 
 private: System::Void btnClear_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	btnClear->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(64)), static_cast<System::Int32>(static_cast<System::Byte>(64)),
-		static_cast<System::Int32>(static_cast<System::Byte>(64)));
+	btnClear->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(114)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
+		static_cast<System::Int32>(static_cast<System::Byte>(152)));
 	btnClear->ForeColor = System::Drawing::Color::Snow;
 	btnClear->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
 }
