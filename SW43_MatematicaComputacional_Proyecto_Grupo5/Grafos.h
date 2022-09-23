@@ -35,7 +35,7 @@ public:
         
         //Prueba1();
         //Prueba2();
-        //Prueba3();  // 1  7
+        Prueba3();  // 1  7
     }
 
     void Prueba1() {

@@ -24,7 +24,7 @@ public:
 	void Dibujar(Graphics^ g) {
 		//definir color
 		
-		g->FillEllipse(Brushes::Red, x, y, 2 * radio, 2 * radio);
+		g->FillEllipse(Brushes::DodgerBlue, x, y, 2 * radio, 2 * radio);
 		Font^ letra = gcnew Font("Arial", 14.5);
 		g->DrawString(Convert::ToString(Nombre), letra, Brushes::Black, x + (radio / 2), y + (radio / 2));
 		delete letra;
