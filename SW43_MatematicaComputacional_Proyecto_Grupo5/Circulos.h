@@ -44,6 +44,8 @@ public:
 		if (color == 13) { b = gcnew SolidBrush(Color::PaleVioletRed); }
 		if (color == 14) { b = gcnew SolidBrush(Color::BlueViolet); }
 		if (color == 15) { b = gcnew SolidBrush(Color::DarkOrchid); }
+		if (color == 16) { b = gcnew SolidBrush(Color::LightSalmon); }
+		if (color == 17) { b = gcnew SolidBrush(Color::MediumPurple); }
 		g->FillEllipse(b, x, y, 2 * radio, 2 * radio);
 		Font^ letra = gcnew Font("Arial", 14.5);
 		g->DrawString(Convert::ToString(Nombre), letra, Brushes::Snow, x + (radio / 2), y + (radio / 2));
