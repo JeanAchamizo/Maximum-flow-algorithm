@@ -126,6 +126,7 @@ private: System::Windows::Forms::Label^ label5;
 private: System::Windows::Forms::Label^ label6;
 private: System::Windows::Forms::PictureBox^ pictureBox5;
 private: System::Windows::Forms::PictureBox^ pictureBox6;
+private: System::Windows::Forms::Button^ btnBack;
 
 
 
@@ -170,6 +171,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
+			this->btnBack = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -249,7 +251,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->btnClear->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnClear->ForeColor = System::Drawing::Color::Snow;
-			this->btnClear->Location = System::Drawing::Point(1181, 36);
+			this->btnClear->Location = System::Drawing::Point(966, 36);
 			this->btnClear->Name = L"btnClear";
 			this->btnClear->Size = System::Drawing::Size(83, 41);
 			this->btnClear->TabIndex = 5;
@@ -449,6 +451,24 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->pictureBox6->TabIndex = 21;
 			this->pictureBox6->TabStop = false;
 			// 
+			// btnBack
+			// 
+			this->btnBack->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(150)), static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(20)));
+			this->btnBack->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
+			this->btnBack->FlatAppearance->BorderSize = 3;
+			this->btnBack->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnBack->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnBack->ForeColor = System::Drawing::Color::Snow;
+			this->btnBack->Location = System::Drawing::Point(1181, 36);
+			this->btnBack->Name = L"btnBack";
+			this->btnBack->Size = System::Drawing::Size(83, 41);
+			this->btnBack->TabIndex = 22;
+			this->btnBack->Text = L"Back";
+			this->btnBack->UseVisualStyleBackColor = false;
+			this->btnBack->Click += gcnew System::EventHandler(this, &frmStart::btnBack_Click);
+			// 
 			// frmStart
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -458,6 +478,7 @@ private: System::Windows::Forms::PictureBox^ pictureBox6;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->ClientSize = System::Drawing::Size(1314, 686);
+			this->Controls->Add(this->btnBack);
 			this->Controls->Add(this->pictureBox6);
 			this->Controls->Add(this->pictureBox5);
 			this->Controls->Add(this->label6);
@@ -569,6 +590,9 @@ private: System::Void btnCheck4_MouseClick(System::Object^ sender, System::Windo
 	this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
 	this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
 	this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
+}
+private: System::Void btnBack_Click(System::Object^ sender, System::EventArgs^ e) {
+	Close();
 }
 };
 }

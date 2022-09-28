@@ -21,7 +21,7 @@ public:
 		y = posy;
 		radio = 25;
 		Nombre = nombre;
-		color = 1 + rand() % 15;
+		color = 1 + rand() % 20;
 	}
 	~Circulo() {}
 
@@ -46,6 +46,9 @@ public:
 		if (color == 15) { b = gcnew SolidBrush(Color::DarkOrchid); }
 		if (color == 16) { b = gcnew SolidBrush(Color::LightSalmon); }
 		if (color == 17) { b = gcnew SolidBrush(Color::MediumPurple); }
+		if (color == 18) { b = gcnew SolidBrush(Color::Red); }
+		if (color == 19) { b = gcnew SolidBrush(Color::Crimson); }
+		if (color == 20) { b = gcnew SolidBrush(Color::MediumPurple); }
 		g->FillEllipse(b, x, y, 2 * radio, 2 * radio);
 		Font^ letra = gcnew Font("Arial", 14.5);
 		g->DrawString(Convert::ToString(Nombre), letra, Brushes::Snow, x + (radio / 2), y + (radio / 2));
