@@ -8,7 +8,7 @@ using namespace SW43MatematicaComputacionalProyectoGrupo5;
 
 int main() {
 	srand(time(NULL));
-	Application::Run(gcnew frmMenu);
+	//Application::Run(gcnew frmMenu);
 	//Application::Run(gcnew MyForm(1));
 	//Application::Run(gcnew MyForm(2));
 
@@ -16,7 +16,7 @@ int main() {
 	solucion = new CaminoMax;
 	
 
-	solucion->MosrtrarCaminoMaximo(1,5);
+	solucion->MosrtrarCaminoMaximo(0,8);
 
 	
 

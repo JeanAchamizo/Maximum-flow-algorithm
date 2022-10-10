@@ -19,9 +19,9 @@ public:
 	CaminoMax() {
 
 		//cambiar aqui
-		grafo = new Grafos(7);
+		grafo = new Grafos(9);
 		FlujoInfinito = Ki = grafo->EntradaMaxima();
-		FlujoMaximo =0;
+		FlujoMaximo = 0;
 
 
 	}
@@ -44,10 +44,6 @@ public:
 		Recorrido.clear();
 		delete grafo;
 	}
-	
-	// si pongo 1 es por que estoy seleccionando la el NODO a
-	//void EncontrarCamino(int i) {
-	// inicio final nodo 6
 
 	void CrearNodos(int x,int y) {
 		
@@ -66,6 +62,18 @@ public:
 		}
 	}
 
+	bool ExisteBucle(int a,int b) {
+
+		for (int i = 0; i < this->Recorrido.size();i++) {
+			if (this->Recorrido[i]->IndI() == a && this->Recorrido[i]->IndJ() == b) {
+				return true;
+			}
+		}
+
+		return false;
+		
+	}
+
 	void EncontrarCamino(int fila, int Columna, int NodoDeLlegada) {		// 0 -- 0 = 6 // 2 -- 0 = 6// 5 -- 2 = 6
 		bool Existe = false;
 		bool LlegoMeta = false;
@@ -73,7 +81,11 @@ public:
 
 		for (int j = 0; j < grafo->NumAristas(); j++) {
 			// Si el grafico en posicion existe
-			if (grafo->matriz()->ObtPosicion(fila, j)->ExisteArco()) { //  encontro 0 - 2 / 2 - 5 / 5 - 6 
+
+
+
+
+			if (!ExisteBucle(fila,j) && grafo->matriz()->ObtPosicion(fila, j)->ExisteArco()) { //  encontro 0 - 2 / 2 - 5 / 5 - 6 
 					Existe = true;
 					
 					//Recorrido.push_back(new Arcos(fila,j));
@@ -97,6 +109,7 @@ public:
 	}
 
 	void MostrarCamino() {
+
 		for (int i = 0; i < Recorrido.size();i++) {
 			cout<<"["<<grafo->matriz()->ObtPosicion(Recorrido[i]->IndI(),
 				Recorrido[i]->IndJ())->IndI() << ";" <<
@@ -135,13 +148,13 @@ public:
 			cout << endl;
 		do {
 			
-			EncontrarCamino(Inicio, 0, Final);
+			EncontrarCamino(Inicio,0, Final);
 				TerminoRecorrido = true;
 				MostrarCamino();
 
 			for (int i = 0; i < grafo->NumAristas(); i++) {
 
-				if (grafo->matriz()->ObtPosicion(Inicio, i)->ExisteArco()) {
+				if (grafo->matriz()->ObtPosicion(Inicio,i)->ExisteArco()) {
 					TerminoRecorrido = false;
 				}
 			}
@@ -152,6 +165,8 @@ public:
 			grafo->MostrarMatriz();
 			cout << endl;
 			cout << "El flujo Maximo es: " << FlujoMaximo;
+			cout << "\n" << grafo->matriz()->ObtPosicion(2, 1)->ExisteArco();
+			
 			system("pause > 0");
 	}
 

@@ -35,7 +35,9 @@ public:
         
         //Prueba1();
         //Prueba2();
-        Prueba3();  // 1  7
+        //Prueba3();  // 1  7
+        //Prueba4();  // 1  6
+        Prueba5();  // 1  6
     }
 
     void Prueba1() {
@@ -125,6 +127,73 @@ public:
         MatrizAdyacente->ObtPosicion(6, 5)->AsigCapacidad(2);
 
         //Flujo Máximo: 14
+    }
+
+    void Prueba4() {
+        //4to EJERCICIO
+       //URL: https://www.youtube.com/watch?v=fDZEwnucLOQ
+
+       //0
+        MatrizAdyacente->ObtPosicion(0, 1)->AsigCapacidad(8);
+        MatrizAdyacente->ObtPosicion(0, 2)->AsigCapacidad(7);
+        MatrizAdyacente->ObtPosicion(0, 3)->AsigCapacidad(6);
+
+        //1
+        MatrizAdyacente->ObtPosicion(1, 4)->AsigCapacidad(3);
+     
+        //2
+        MatrizAdyacente->ObtPosicion(2, 4)->AsigCapacidad(4);
+        MatrizAdyacente->ObtPosicion(2, 6)->AsigCapacidad(5);
+
+        //3
+        MatrizAdyacente->ObtPosicion(3, 2)->AsigCapacidad(3);
+        MatrizAdyacente->ObtPosicion(3, 5)->AsigCapacidad(2);
+
+        //4
+        MatrizAdyacente->ObtPosicion(4, 6)->AsigCapacidad(9);
+
+        //5
+        MatrizAdyacente->ObtPosicion(5, 6)->AsigCapacidad(2);
+
+        //Flujo Máximo: 14
+    }
+
+    void Prueba5() {
+        //4to EJERCICIO
+
+        //0
+        MatrizAdyacente->ObtPosicion(0, 1)->AsigCapacidad(5);
+        MatrizAdyacente->ObtPosicion(0, 2)->AsigCapacidad(2);
+
+        //1
+        MatrizAdyacente->ObtPosicion(1, 3)->AsigCapacidad(3);
+        MatrizAdyacente->ObtPosicion(1, 4)->AsigCapacidad(7);
+     
+        //2
+        MatrizAdyacente->ObtPosicion(2, 1)->AsigCapacidad(2);
+        MatrizAdyacente->ObtPosicion(2, 6)->AsigCapacidad(9);
+
+        //3
+        MatrizAdyacente->ObtPosicion(3, 2)->AsigCapacidad(3);
+        MatrizAdyacente->ObtPosicion(3, 4)->AsigCapacidad(2);
+        MatrizAdyacente->ObtPosicion(3, 6)->AsigCapacidad(6);
+
+        //4
+        MatrizAdyacente->ObtPosicion(4, 5)->AsigCapacidad(8);
+        MatrizAdyacente->ObtPosicion(4, 6)->AsigCapacidad(5);
+        MatrizAdyacente->ObtPosicion(4, 7)->AsigCapacidad(7);
+
+        //5
+        MatrizAdyacente->ObtPosicion(5, 8)->AsigCapacidad(4);
+
+        //6
+        MatrizAdyacente->ObtPosicion(6, 7)->AsigCapacidad(2);
+
+        //7
+        MatrizAdyacente->ObtPosicion(7, 5)->AsigCapacidad(3);
+        MatrizAdyacente->ObtPosicion(7, 8)->AsigCapacidad(5);
+
+        //Flujo Máximo: 7
     }
 
     void MostrarMatriz() {
