@@ -4,21 +4,17 @@
 
 using namespace SW43MatematicaComputacionalProyectoGrupo5;
 
-//#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
+#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 
 int main() {
 	srand(time(NULL));
-	//Application::Run(gcnew frmMenu);
-	//Application::Run(gcnew MyForm(1));
-	//Application::Run(gcnew MyForm(2));
+	Application::Run(gcnew frmStart);
 
-	CaminoMax* solucion;
-	solucion = new CaminoMax;
-	
-
-	solucion->MosrtrarCaminoMaximo(0,8);
-
-	
+	//CaminoMax* solucion;
+	//solucion = new CaminoMax;
+	//solucion->CrearNodoMatriz(9);
+	//
+	//solucion->SolucionCaminoMaximo(0,8);
 
 	return 0;
 }

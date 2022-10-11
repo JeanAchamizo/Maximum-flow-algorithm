@@ -26,9 +26,15 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			//
 
 			solucion = new CaminoMax;
+			
 			g = this->CreateGraphics();
 			space = BufferedGraphicsManager::Current;
 			buffer = space->Allocate(g, this->ClientRectangle);
+
+			gpanel1= panel1->CreateGraphics();
+			space1 = BufferedGraphicsManager::Current;
+			buffer1 = space1->Allocate(gpanel1, panel1->ClientRectangle);
+			
 			paisaje = gcnew Bitmap("img/frmStart13.png");
 		}
 
@@ -42,74 +48,37 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			{
 				delete components;
 			}
+				delete solucion;
+				delete paisaje;
 		}
 
 	protected:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::ComponentModel::IContainer^ components;
 	private: System::Windows::Forms::Timer^ timer1;
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Variable del diseñador necesaria.
 		/// </summary>
 
 		CaminoMax* solucion;
+
 		BufferedGraphicsContext^ space;
 		BufferedGraphics^ buffer;
+		Graphics^ g;
+		
+		Bitmap^ paisaje;
+		
+		Graphics^ gpanel1;
+		BufferedGraphicsContext^ space1;
+		BufferedGraphics^ buffer1;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		   Graphics^ g;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
-
 	private: System::Windows::Forms::Button^ btnDraw;
 	private: System::Windows::Forms::Button^ btnClear;
-
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
@@ -117,27 +86,24 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
 	private: System::Windows::Forms::Label^ label3;
-private: System::Windows::Forms::PictureBox^ btnCheck1;
-private: System::Windows::Forms::PictureBox^ btnCheck3;
-private: System::Windows::Forms::PictureBox^ btnCheck2;
-private: System::Windows::Forms::PictureBox^ btnCheck4;
-private: System::Windows::Forms::Label^ label4;
-private: System::Windows::Forms::Label^ label5;
-private: System::Windows::Forms::Label^ label6;
-private: System::Windows::Forms::PictureBox^ pictureBox5;
-private: System::Windows::Forms::PictureBox^ pictureBox6;
-private: System::Windows::Forms::Button^ btnBack;
 
 
 
 
-
-
-
-
-
-
-		   Bitmap^ paisaje;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label6;
+	private: System::Windows::Forms::PictureBox^ pictureBox5;
+	private: System::Windows::Forms::PictureBox^ pictureBox6;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown4;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown6;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ btnBack;
 
 
 #pragma region Windows Form Designer generated code
@@ -162,28 +128,32 @@ private: System::Windows::Forms::Button^ btnBack;
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->btnCheck1 = (gcnew System::Windows::Forms::PictureBox());
-			this->btnCheck3 = (gcnew System::Windows::Forms::PictureBox());
-			this->btnCheck2 = (gcnew System::Windows::Forms::PictureBox());
-			this->btnCheck4 = (gcnew System::Windows::Forms::PictureBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->btnBack = (gcnew System::Windows::Forms::Button());
+			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown4 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown6 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnCheck1))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnCheck3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnCheck2))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnCheck4))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// timer1
@@ -193,7 +163,7 @@ private: System::Windows::Forms::Button^ btnBack;
 			// 
 			// panel1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::Transparent;
+			this->panel1->BackColor = System::Drawing::Color::Cyan;
 			this->panel1->Location = System::Drawing::Point(51, 375);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(481, 281);
@@ -238,6 +208,7 @@ private: System::Windows::Forms::Button^ btnBack;
 			this->btnDraw->TabIndex = 4;
 			this->btnDraw->Text = L"Dibujar";
 			this->btnDraw->UseVisualStyleBackColor = false;
+			this->btnDraw->Click += gcnew System::EventHandler(this, &frmStart::btnDraw_Click);
 			this->btnDraw->MouseEnter += gcnew System::EventHandler(this, &frmStart::btnDraw_MouseEnter);
 			this->btnDraw->MouseLeave += gcnew System::EventHandler(this, &frmStart::btnDraw_MouseLeave);
 			// 
@@ -298,9 +269,9 @@ private: System::Windows::Forms::Button^ btnBack;
 			this->pictureBox4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(144)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 				static_cast<System::Int32>(static_cast<System::Byte>(152)));
 			this->pictureBox4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.Image")));
-			this->pictureBox4->Location = System::Drawing::Point(51, 111);
+			this->pictureBox4->Location = System::Drawing::Point(28, 109);
 			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(138, 43);
+			this->pictureBox4->Size = System::Drawing::Size(128, 43);
 			this->pictureBox4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->pictureBox4->TabIndex = 9;
 			this->pictureBox4->TabStop = false;
@@ -312,7 +283,7 @@ private: System::Windows::Forms::Button^ btnBack;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::Snow;
-			this->label2->Location = System::Drawing::Point(62, 260);
+			this->label2->Location = System::Drawing::Point(229, 234);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(158, 16);
 			this->label2->TabIndex = 10;
@@ -320,7 +291,7 @@ private: System::Windows::Forms::Button^ btnBack;
 			// 
 			// numericUpDown2
 			// 
-			this->numericUpDown2->Location = System::Drawing::Point(232, 260);
+			this->numericUpDown2->Location = System::Drawing::Point(273, 260);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 99, 0, 0, 0 });
 			this->numericUpDown2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown2->Name = L"numericUpDown2";
@@ -336,59 +307,11 @@ private: System::Windows::Forms::Button^ btnBack;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::Snow;
-			this->label3->Location = System::Drawing::Point(95, 175);
+			this->label3->Location = System::Drawing::Point(53, 167);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(103, 16);
+			this->label3->Size = System::Drawing::Size(150, 16);
 			this->label3->TabIndex = 12;
-			this->label3->Text = L"Nodo de Origen";
-			// 
-			// btnCheck1
-			// 
-			this->btnCheck1->BackColor = System::Drawing::Color::Transparent;
-			this->btnCheck1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCheck1.Image")));
-			this->btnCheck1->Location = System::Drawing::Point(51, 174);
-			this->btnCheck1->Name = L"btnCheck1";
-			this->btnCheck1->Size = System::Drawing::Size(38, 19);
-			this->btnCheck1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->btnCheck1->TabIndex = 13;
-			this->btnCheck1->TabStop = false;
-			this->btnCheck1->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::btnCheck1_MouseClick);
-			// 
-			// btnCheck3
-			// 
-			this->btnCheck3->BackColor = System::Drawing::Color::Transparent;
-			this->btnCheck3->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCheck3.Image")));
-			this->btnCheck3->Location = System::Drawing::Point(51, 213);
-			this->btnCheck3->Name = L"btnCheck3";
-			this->btnCheck3->Size = System::Drawing::Size(39, 20);
-			this->btnCheck3->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->btnCheck3->TabIndex = 14;
-			this->btnCheck3->TabStop = false;
-			this->btnCheck3->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::btnCheck3_MouseClick);
-			// 
-			// btnCheck2
-			// 
-			this->btnCheck2->BackColor = System::Drawing::Color::Transparent;
-			this->btnCheck2->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCheck2.Image")));
-			this->btnCheck2->Location = System::Drawing::Point(282, 174);
-			this->btnCheck2->Name = L"btnCheck2";
-			this->btnCheck2->Size = System::Drawing::Size(48, 19);
-			this->btnCheck2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->btnCheck2->TabIndex = 15;
-			this->btnCheck2->TabStop = false;
-			this->btnCheck2->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::btnCheck2_MouseClick);
-			// 
-			// btnCheck4
-			// 
-			this->btnCheck4->BackColor = System::Drawing::Color::Transparent;
-			this->btnCheck4->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"btnCheck4.Image")));
-			this->btnCheck4->Location = System::Drawing::Point(282, 213);
-			this->btnCheck4->Name = L"btnCheck4";
-			this->btnCheck4->Size = System::Drawing::Size(48, 20);
-			this->btnCheck4->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->btnCheck4->TabIndex = 16;
-			this->btnCheck4->TabStop = false;
-			this->btnCheck4->MouseClick += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::btnCheck4_MouseClick);
+			this->label3->Text = L"Nodo de Origen: Fuente";
 			// 
 			// label4
 			// 
@@ -397,11 +320,11 @@ private: System::Windows::Forms::Button^ btnBack;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::Snow;
-			this->label4->Location = System::Drawing::Point(336, 175);
+			this->label4->Location = System::Drawing::Point(270, 167);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(113, 16);
+			this->label4->Size = System::Drawing::Size(152, 16);
 			this->label4->TabIndex = 17;
-			this->label4->Text = L"Nodo de Llegada";
+			this->label4->Text = L"Nodo destino: Sumidero";
 			// 
 			// label5
 			// 
@@ -410,7 +333,7 @@ private: System::Windows::Forms::Button^ btnBack;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::Snow;
-			this->label5->Location = System::Drawing::Point(96, 216);
+			this->label5->Location = System::Drawing::Point(48, 234);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(83, 16);
 			this->label5->TabIndex = 18;
@@ -423,7 +346,7 @@ private: System::Windows::Forms::Button^ btnBack;
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Snow;
-			this->label6->Location = System::Drawing::Point(336, 216);
+			this->label6->Location = System::Drawing::Point(48, 264);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(99, 16);
 			this->label6->TabIndex = 19;
@@ -469,6 +392,104 @@ private: System::Windows::Forms::Button^ btnBack;
 			this->btnBack->UseVisualStyleBackColor = false;
 			this->btnBack->Click += gcnew System::EventHandler(this, &frmStart::btnBack_Click);
 			// 
+			// numericUpDown3
+			// 
+			this->numericUpDown3->Location = System::Drawing::Point(209, 167);
+			this->numericUpDown3->Name = L"numericUpDown3";
+			this->numericUpDown3->Size = System::Drawing::Size(35, 20);
+			this->numericUpDown3->TabIndex = 23;
+			this->numericUpDown3->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// numericUpDown4
+			// 
+			this->numericUpDown4->Location = System::Drawing::Point(428, 163);
+			this->numericUpDown4->Name = L"numericUpDown4";
+			this->numericUpDown4->Size = System::Drawing::Size(35, 20);
+			this->numericUpDown4->TabIndex = 24;
+			this->numericUpDown4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// numericUpDown5
+			// 
+			this->numericUpDown5->Location = System::Drawing::Point(153, 264);
+			this->numericUpDown5->Name = L"numericUpDown5";
+			this->numericUpDown5->Size = System::Drawing::Size(34, 20);
+			this->numericUpDown5->TabIndex = 25;
+			this->numericUpDown5->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// numericUpDown6
+			// 
+			this->numericUpDown6->Location = System::Drawing::Point(151, 234);
+			this->numericUpDown6->Name = L"numericUpDown6";
+			this->numericUpDown6->Size = System::Drawing::Size(36, 20);
+			this->numericUpDown6->TabIndex = 26;
+			this->numericUpDown6->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::Purple;
+			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
+			this->button1->FlatAppearance->BorderSize = 3;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::Snow;
+			this->button1->Location = System::Drawing::Point(478, 158);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(63, 33);
+			this->button1->TabIndex = 27;
+			this->button1->Text = L"ok";
+			this->button1->UseVisualStyleBackColor = false;
+			// 
+			// button2
+			// 
+			this->button2->BackColor = System::Drawing::Color::Purple;
+			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
+			this->button2->FlatAppearance->BorderSize = 3;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->button2->ForeColor = System::Drawing::Color::Snow;
+			this->button2->Location = System::Drawing::Point(406, 242);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(114, 38);
+			this->button2->TabIndex = 28;
+			this->button2->Text = L"Asig Valor";
+			this->button2->UseVisualStyleBackColor = false;
+			// 
+			// button3
+			// 
+			this->button3->BackColor = System::Drawing::Color::DeepSkyBlue;
+			this->button3->Enabled = false;
+			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
+			this->button3->FlatAppearance->BorderSize = 3;
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->button3->ForeColor = System::Drawing::Color::Snow;
+			this->button3->Location = System::Drawing::Point(116, 197);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(328, 31);
+			this->button3->TabIndex = 15;
+			this->button3->Text = L"Crear arcos entre nodos";
+			this->button3->UseVisualStyleBackColor = false;
+			// 
+			// button4
+			// 
+			this->button4->BackColor = System::Drawing::Color::DeepSkyBlue;
+			this->button4->Enabled = false;
+			this->button4->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
+			this->button4->FlatAppearance->BorderSize = 3;
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->button4->ForeColor = System::Drawing::Color::Snow;
+			this->button4->Location = System::Drawing::Point(162, 130);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(253, 31);
+			this->button4->TabIndex = 29;
+			this->button4->Text = L"Elegir el sumidero y la fuente";
+			this->button4->UseVisualStyleBackColor = false;
+			// 
 			// frmStart
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -478,16 +499,20 @@ private: System::Windows::Forms::Button^ btnBack;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->ClientSize = System::Drawing::Size(1314, 686);
+			this->Controls->Add(this->button4);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->numericUpDown6);
+			this->Controls->Add(this->numericUpDown5);
+			this->Controls->Add(this->numericUpDown4);
+			this->Controls->Add(this->numericUpDown3);
 			this->Controls->Add(this->btnBack);
 			this->Controls->Add(this->pictureBox6);
 			this->Controls->Add(this->pictureBox5);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
-			this->Controls->Add(this->btnCheck4);
-			this->Controls->Add(this->btnCheck2);
-			this->Controls->Add(this->btnCheck3);
-			this->Controls->Add(this->btnCheck1);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->numericUpDown2);
 			this->Controls->Add(this->numericUpDown1);
@@ -514,29 +539,36 @@ private: System::Windows::Forms::Button^ btnBack;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnCheck1))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnCheck3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnCheck2))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnCheck4))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+
 private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
 	buffer->Graphics->DrawImage(paisaje, Rectangle(0, 0, 1318, 696), Rectangle(0, 0, paisaje->Width, paisaje->Height), GraphicsUnit::Pixel);
-	//buffer->Graphics->Clear(Color::White);
+	buffer1->Graphics->Clear(Color::Cyan);
+
 	solucion->DibujarNodos(buffer->Graphics);
+	solucion->ObtGrafo()->MostrarMatrizPanel(buffer1->Graphics);
+
 	buffer->Render(g);
+	buffer1->Render(gpanel1);
 
 }
 
 private: System::Void frmStart_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 
 	if (585< e->X && e->X <1220 && e->Y>130 && e->Y < 475) {
+		
 		solucion->CrearNodos(e->X-13,e->Y-13);
+		
 	}
 }
 
@@ -568,31 +600,43 @@ private: System::Void btnClear_MouseLeave(System::Object^ sender, System::EventA
 	btnClear->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
 }
 private: System::Void btnCheck1_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
-	this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
+	//this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
 }
 private: System::Void btnCheck2_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
-	this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
+	//this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
 }
 private: System::Void btnCheck3_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
-	this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
+	//this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
 }
 private: System::Void btnCheck4_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
+	//this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
+	//this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
 }
 private: System::Void btnBack_Click(System::Object^ sender, System::EventArgs^ e) {
-	Close();
+	this->Close();
+}
+private: System::Void btnDraw_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	solucion->CrearNodoMatriz(int(numericUpDown1->Value));
+
+	numericUpDown3->Maximum = solucion->ObtGrafo()->NumAristas()-1;
+	numericUpDown4->Maximum = solucion->ObtGrafo()->NumAristas()-1;
+	numericUpDown5->Maximum = solucion->ObtGrafo()->NumAristas()-1;
+	numericUpDown6->Maximum = solucion->ObtGrafo()->NumAristas()-1;
+
+
+	
 }
 };
 }

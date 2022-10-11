@@ -30,25 +30,25 @@ public:
 		SolidBrush^ b;
 		//Colores de las fichas
 		if (color == 1) { b = gcnew SolidBrush(Color::DarkOrange); }
-		if (color == 2) { b = gcnew SolidBrush(Color::Fuchsia); }
-		if (color == 3) { b = gcnew SolidBrush(Color::OrangeRed); }
-		if (color == 4) { b = gcnew SolidBrush(Color::DeepPink); }
-		if (color == 5) { b = gcnew SolidBrush(Color::Indigo); }
-		if (color == 6) { b = gcnew SolidBrush(Color::Orange); }
-		if (color == 7) { b = gcnew SolidBrush(Color::Purple); }
-		if (color == 8) { b = gcnew SolidBrush(Color::Magenta); }
-		if (color == 9) { b = gcnew SolidBrush(Color::DarkViolet); }
-		if (color == 10) { b = gcnew SolidBrush(Color::MediumVioletRed); }
-		if (color == 11) { b = gcnew SolidBrush(Color::HotPink); }
-		if (color == 12) { b = gcnew SolidBrush(Color::Tomato); }
-		if (color == 13) { b = gcnew SolidBrush(Color::PaleVioletRed); }
-		if (color == 14) { b = gcnew SolidBrush(Color::BlueViolet); }
-		if (color == 15) { b = gcnew SolidBrush(Color::DarkOrchid); }
-		if (color == 16) { b = gcnew SolidBrush(Color::LightSalmon); }
-		if (color == 17) { b = gcnew SolidBrush(Color::MediumPurple); }
-		if (color == 18) { b = gcnew SolidBrush(Color::Red); }
-		if (color == 19) { b = gcnew SolidBrush(Color::Crimson); }
-		if (color == 20) { b = gcnew SolidBrush(Color::MediumPurple); }
+		else if (color == 2) { b = gcnew SolidBrush(Color::Fuchsia); }
+		else if (color == 3) { b = gcnew SolidBrush(Color::OrangeRed); }
+		else if (color == 4) { b = gcnew SolidBrush(Color::DeepPink); }
+		else if (color == 5) { b = gcnew SolidBrush(Color::Indigo); }
+		else if (color == 6) { b = gcnew SolidBrush(Color::Orange); }
+		else if (color == 7) { b = gcnew SolidBrush(Color::Purple); }
+		else if (color == 8) { b = gcnew SolidBrush(Color::Magenta); }
+		else if (color == 9) { b = gcnew SolidBrush(Color::DarkViolet); }
+		else if (color == 10) { b = gcnew SolidBrush(Color::MediumVioletRed); }
+		else if (color == 11) { b = gcnew SolidBrush(Color::HotPink); }
+		else if (color == 12) { b = gcnew SolidBrush(Color::Tomato); }
+		else if (color == 13) { b = gcnew SolidBrush(Color::PaleVioletRed); }
+		else if (color == 14) { b = gcnew SolidBrush(Color::BlueViolet); }
+		else if (color == 15) { b = gcnew SolidBrush(Color::DarkOrchid); }
+		else if (color == 16) { b = gcnew SolidBrush(Color::LightSalmon); }
+		else if (color == 17) { b = gcnew SolidBrush(Color::MediumPurple); }
+		else if (color == 18) { b = gcnew SolidBrush(Color::Red); }
+		else if (color == 19) { b = gcnew SolidBrush(Color::Crimson); }
+		else if (color == 20) { b = gcnew SolidBrush(Color::MediumPurple); }
 		g->FillEllipse(b, x, y, 2 * radio, 2 * radio);
 		Font^ letra = gcnew Font("Arial", 14.5);
 		g->DrawString(Convert::ToString(Nombre), letra, Brushes::Snow, x + (radio / 2), y + (radio / 2));

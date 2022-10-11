@@ -20,6 +20,7 @@ public:
 	~Grafos(){
         delete MatrizAdyacente;
     }
+private:
     //Truncar para prueba
     void CrearNodos() {
         for (int i = 0; i < Vertices; i++) {
@@ -37,9 +38,10 @@ public:
         //Prueba2();
         //Prueba3();  // 1  7
         //Prueba4();  // 1  6
-        Prueba5();  // 1  6
+        //Prueba5();  // 1  6
     }
 
+public:
     void Prueba1() {
         //1er EJERCICIO
         //URL: https://youtu.be/T4jlNZjCaWk
@@ -68,7 +70,6 @@ public:
 
         //Flujo Máximo: 9
     }
-
     void Prueba2() {
         //2do EJERCICIO
        //URL: https://www.youtube.com/watch?v=fDZEwnucLOQ
@@ -97,7 +98,6 @@ public:
 
         //Flujo Máximo: 14
     }
-
     void Prueba3() {
         //4to EJERCICIO
        //URL: https://www.youtube.com/watch?v=fDZEwnucLOQ
@@ -128,7 +128,6 @@ public:
 
         //Flujo Máximo: 14
     }
-
     void Prueba4() {
         //4to EJERCICIO
        //URL: https://www.youtube.com/watch?v=fDZEwnucLOQ
@@ -157,7 +156,6 @@ public:
 
         //Flujo Máximo: 14
     }
-
     void Prueba5() {
         //4to EJERCICIO
 
@@ -196,6 +194,7 @@ public:
         //Flujo Máximo: 7
     }
 
+
     void MostrarMatriz() {
 
         for (int i = 0; i < Vertices; i++) {
@@ -215,6 +214,39 @@ public:
         }
 
     }
+    void MostrarMatrizPanel(Graphics^g) {
+
+        int tamLetras = 25-Vertices;
+
+        for (int i = 0; i < Vertices; i++) {
+
+            if (i<10) {
+
+                g->DrawString(" " + i + "  ", gcnew Font("Arial", tamLetras), Brushes::Black, (30 - Vertices) + i * (tamLetras * 3), 0);
+            }
+            
+            else g->DrawString( i + "  ", gcnew Font("Arial", tamLetras), Brushes::Black, (30 - Vertices) + i * (tamLetras * 3), 0);
+        
+        }
+        
+        for (int i = 0; i < Vertices; i++) {
+
+            if (i < 10) {
+                   g->DrawString(" " + i + "  ",gcnew Font("Arial", tamLetras), Brushes::Black,0, (30 - Vertices) + (i) * (tamLetras + 5));
+            }
+            else  g->DrawString( i + "  ",gcnew Font("Arial", tamLetras), Brushes::Black,0, (30 - Vertices) + (i) * (tamLetras + 5));
+            
+            for (int j = 0; j < Vertices; j++) {
+
+                g->DrawString("[" + MatrizAdyacente->ObtPosicion(j,i)->ObtCapacidad()
+                    + ";" + MatrizAdyacente->ObtPosicion(j,i)->ObtAcumulados() + "]", 
+                    gcnew Font("Arial", tamLetras), Brushes::Black,(30-Vertices)+i*(tamLetras*3), (30 - Vertices)+(j)*(tamLetras +5));
+
+           }
+       }
+
+    }
+
     int EntradaMaxima() {
         int Max = 0;
         for (int i = 0; i < Vertices;i++) {
@@ -226,7 +258,6 @@ public:
         }
         return Max;
     }
-
     int NumAristas() { return Vertices;}
 
     Matriz* matriz() {
