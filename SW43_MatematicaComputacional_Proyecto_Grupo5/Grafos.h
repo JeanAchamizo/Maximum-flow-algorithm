@@ -1,6 +1,7 @@
 #pragma once
 #include "iostream"
 #include "Matriz.h"
+#include "Flechas.h"
 
 using namespace std;
 //atributos V = Conjunto de vértices o nodos ,E = Conjunto de aristas o arcos que conectan los vértices en V
@@ -9,12 +10,14 @@ private:
     int Vertices;
     //int Aristas;
     Matriz* MatrizAdyacente;
+    vector<Flecha*> arcos;
+    vector<Circulo*> nodos;
         
 public:
     Grafos(int Vert) {
         Vertices = Vert;
         MatrizAdyacente = new Matriz(Vertices,Vertices);
-        CrearNodos();
+        CrearMatrizNodo();
     }
     
 	~Grafos(){
@@ -22,18 +25,12 @@ public:
     }
 private:
     //Truncar para prueba
-    void CrearNodos() {
+    void CrearMatrizNodo() {
         for (int i = 0; i < Vertices; i++) {
             for (int j = 0; j < Vertices; j++) {
-                //Arcos* arco = new Arcos();
                 MatrizAdyacente->AsignarValorPosicion(i,j,new Arcos(i,j));
-                
             }
         }
-        // Nodos Para Truncar la prueba
-
-        //Ejercicios
-        
         //Prueba1();
         //Prueba2();
         //Prueba3();  // 1  7
@@ -259,6 +256,37 @@ public:
         return Max;
     }
     int NumAristas() { return Vertices;}
+   
+    //Agrear el nodo de salida y de llegada con su valor
+    void AgregarArcos(int i,int j,int Value) {
+
+        if (nodos.size()>=i && nodos.size()>=j) {
+            arcos.push_back(new Flecha(nodos[i],nodos[j]));
+            MatrizAdyacente->ObtPosicion(i,j)->AsigCapacidad(Value);
+        }
+    
+    }
+    //crear los nodos 
+    void CrearNodos(int x, int y) {
+
+        if (NumAristas() > nodos.size()) {
+            nodos.push_back(new Circulo(x, y, nodos.size()));
+        }
+
+
+    }
+    void DibujarGrafo(Graphics^ g) {
+
+        for (int i = 0; i < arcos.size(); i++) {
+            arcos[i]->Dibujar(g, MatrizAdyacente);
+        }
+        for (int i = 0; i < nodos.size(); i++) {
+            nodos[i]->Dibujar(g);
+        }
+        
+
+
+    }
 
     Matriz* matriz() {
         return MatrizAdyacente;

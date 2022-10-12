@@ -1,25 +1,26 @@
 #pragma once
 #include "Dependencias.h"
 #include "Grafos.h"
+#include "Flechas.h"
 #include "Circulos.h"
+#include "Matriz.h"
 
 
 //Aplicar Algoritmo de Ford Fulkerson
 
 class CaminoMax {
 private:
-	vector<Arcos*> Recorrido;
-	vector<Circulo*> nodos;
-
 	Grafos* grafo;
+
 	int Ki,FlujoInfinito,FlujoMaximo;
+	vector<Arcos*> Recorrido;
 	
 
 public:
 	CaminoMax() {
 		//cambiar aqui
 		grafo = new Grafos(0);
-		//FlujoMaximo =FlujoInfinito = Ki = 0;
+		FlujoMaximo = 0;
 	}
 
 	void CrearNodoMatriz(int Value) {
@@ -31,55 +32,36 @@ public:
 		delete grafo;
 	}
 
-	void CrearNodos(int x,int y) {
-		
-		if (grafo->NumAristas()>nodos.size()) {
-			nodos.push_back(new Circulo(x,y,nodos.size()));
-
-		}
-
-
-	}
-	void DibujarNodos(Graphics^g) {
-
-		for (int i = 0; i < nodos.size();i++) {
-			nodos[i]->Dibujar(g);
-		}
-	}
 	void SolucionCaminoMaximo(int Inicio,int Final) {
 
-		bool TerminoRecorrido=false;
+		//grafo->Prueba5();
 		FlujoInfinito = Ki = grafo->EntradaMaxima();
 		FlujoMaximo = 0;
 
-			grafo->MostrarMatriz();
-			cout << endl;
 		do {
 			
 			EncontrarCamino(Inicio,0, Final);
-				TerminoRecorrido = true;
-				MostrarCamino();
 
-			for (int i = 0; i < grafo->NumAristas(); i++) {
+			this->ActualizarCamino();
 
-				if (grafo->matriz()->ObtPosicion(Inicio,i)->ExisteArco()) {
-					TerminoRecorrido = false;
-				}
-			}
 
-		} while (!TerminoRecorrido);
+		} while (NoterminoRecorrido(Inicio));
 
-		/// Muestra los resultados
-			grafo->MostrarMatriz();
-			cout << endl;
-			cout << "El flujo Maximo es: " << FlujoMaximo;
-			cout << "\n" << grafo->matriz()->ObtPosicion(2, 1)->ExisteArco();
-			
-			system("pause > 0");
 	}
+
 	Grafos* ObtGrafo() {
 		return grafo;
 	}
+
+	void MostrarFlujoMaximo(Graphics^g) {
+
+		Font^ letra = gcnew Font("Arial", 50);
+		g->DrawString(Convert::ToString(FlujoMaximo), letra, Brushes::Snow,1122,584);
+		//g->DrawString(Convert::ToString(ID), letra, Brushes::Snow,x,y);
+		delete letra;
+
+	}
+
 
 private:
 	void EncontrarCamino(int fila, int Columna, int NodoDeLlegada) {		// 0 -- 0 = 6 // 2 -- 0 = 6// 5 -- 2 = 6
@@ -115,21 +97,23 @@ private:
 			Recorrido.clear();
 		}
 	}
-	void MostrarCamino() {
+	void ActualizarCamino() {
 
 		for (int i = 0; i < Recorrido.size(); i++) {
-			cout << "[" << grafo->matriz()->ObtPosicion(Recorrido[i]->IndI(),
-				Recorrido[i]->IndJ())->IndI() << ";" <<
-				grafo->matriz()->ObtPosicion(Recorrido[i]->IndI(),
-					Recorrido[i]->IndJ())->IndJ() << "]->";
+			//cout << "[" << grafo->matriz()->ObtPosicion(Recorrido[i]->IndI(),
+			//	Recorrido[i]->IndJ())->IndI() << ";" <<
+			//	grafo->matriz()->ObtPosicion(Recorrido[i]->IndI(),
+			//		Recorrido[i]->IndJ())->IndJ() << "]->";
+			
 			// Asignamos el flujo a las capacidades
 			grafo->matriz()->ObtPosicion(Recorrido[i]->IndI(),
 				Recorrido[i]->IndJ())->AsigAcumulados(grafo->matriz()->ObtPosicion(Recorrido[i]->IndI(),
 					Recorrido[i]->IndJ())->ObtAcumulados() + Ki);
+			
 			if (Recorrido.size() == i + 1) {
 
-				cout << " ===== " << Ki;
-				cout << endl;
+				//cout << " ===== " << Ki;
+				//cout << endl;
 				FlujoMaximo = FlujoMaximo + Ki;
 
 			}
@@ -155,6 +139,16 @@ private:
 			Ki = (arcos->ObtCapacidad() - arcos->ObtAcumulados());
 		}
 		Recorrido.push_back(new Arcos(fila, j));
+	}
+	bool NoterminoRecorrido(int Inicio) {
+
+		for (int i = 0; i < grafo->NumAristas(); i++) {
+
+			if (grafo->matriz()->ObtPosicion(Inicio, i)->ExisteArco()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 };

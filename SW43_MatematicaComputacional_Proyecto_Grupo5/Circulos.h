@@ -1,11 +1,13 @@
 #pragma once
+#include "Dependencias.h"
+
 
 using namespace System::Drawing;
 
 class Circulo {
 private:
 	int x, y;
-	int Nombre;
+	int ID;
 	int radio;
 	int color;
 public:
@@ -17,10 +19,10 @@ public:
 		
 	}
 	Circulo(int posx, int posy,int nombre) {
+		radio = 25;
 		x = posx;
 		y = posy;
-		radio = 25;
-		Nombre = nombre;
+		ID = nombre;
 		color = 1 + rand() % 20;
 	}
 	~Circulo() {}
@@ -51,8 +53,14 @@ public:
 		else if (color == 20) { b = gcnew SolidBrush(Color::MediumPurple); }
 		g->FillEllipse(b, x, y, 2 * radio, 2 * radio);
 		Font^ letra = gcnew Font("Arial", 14.5);
-		g->DrawString(Convert::ToString(Nombre), letra, Brushes::Snow, x + (radio / 2), y + (radio / 2));
+		g->DrawString(Convert::ToString(ID), letra, Brushes::Snow, x + (radio / 2), y + (radio / 2));
+		//g->DrawString(Convert::ToString(ID), letra, Brushes::Snow,x,y);
 		delete letra;
 	}
+
+	int GetX() { return x; }
+	int GetY() { return y; }
+	int GetID() { return ID; }
+	int GetRadio() { return radio; }
 
 };

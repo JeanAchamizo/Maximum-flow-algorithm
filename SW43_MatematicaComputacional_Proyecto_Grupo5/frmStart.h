@@ -95,10 +95,10 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::PictureBox^ pictureBox5;
 	private: System::Windows::Forms::PictureBox^ pictureBox6;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown4;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown6;
+	private: System::Windows::Forms::NumericUpDown^ numFuente;
+	private: System::Windows::Forms::NumericUpDown^ numSumidero;
+	private: System::Windows::Forms::NumericUpDown^ numNodoLlegada;
+	private: System::Windows::Forms::NumericUpDown^ numNodoSalida;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
@@ -134,10 +134,10 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->pictureBox5 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox6 = (gcnew System::Windows::Forms::PictureBox());
 			this->btnBack = (gcnew System::Windows::Forms::Button());
-			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->numericUpDown4 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
-			this->numericUpDown6 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numFuente = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numSumidero = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numNodoLlegada = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numNodoSalida = (gcnew System::Windows::Forms::NumericUpDown());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
@@ -150,10 +150,10 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numFuente))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numSumidero))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numNodoLlegada))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numNodoSalida))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// timer1
@@ -228,6 +228,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->btnClear->TabIndex = 5;
 			this->btnClear->Text = L"Limpiar";
 			this->btnClear->UseVisualStyleBackColor = false;
+			this->btnClear->Click += gcnew System::EventHandler(this, &frmStart::btnClear_Click);
 			this->btnClear->MouseEnter += gcnew System::EventHandler(this, &frmStart::btnClear_MouseEnter);
 			this->btnClear->MouseLeave += gcnew System::EventHandler(this, &frmStart::btnClear_MouseLeave);
 			// 
@@ -283,7 +284,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::Snow;
-			this->label2->Location = System::Drawing::Point(229, 234);
+			this->label2->Location = System::Drawing::Point(229, 221);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(158, 16);
 			this->label2->TabIndex = 10;
@@ -291,7 +292,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// 
 			// numericUpDown2
 			// 
-			this->numericUpDown2->Location = System::Drawing::Point(273, 260);
+			this->numericUpDown2->Location = System::Drawing::Point(279, 254);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 99, 0, 0, 0 });
 			this->numericUpDown2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->numericUpDown2->Name = L"numericUpDown2";
@@ -307,7 +308,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::Snow;
-			this->label3->Location = System::Drawing::Point(53, 167);
+			this->label3->Location = System::Drawing::Point(717, 604);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(150, 16);
 			this->label3->TabIndex = 12;
@@ -320,7 +321,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::Snow;
-			this->label4->Location = System::Drawing::Point(270, 167);
+			this->label4->Location = System::Drawing::Point(715, 636);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(152, 16);
 			this->label4->TabIndex = 17;
@@ -333,7 +334,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::Snow;
-			this->label5->Location = System::Drawing::Point(48, 234);
+			this->label5->Location = System::Drawing::Point(48, 221);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(83, 16);
 			this->label5->TabIndex = 18;
@@ -346,7 +347,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::Snow;
-			this->label6->Location = System::Drawing::Point(48, 264);
+			this->label6->Location = System::Drawing::Point(48, 260);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(99, 16);
 			this->label6->TabIndex = 19;
@@ -392,37 +393,37 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->btnBack->UseVisualStyleBackColor = false;
 			this->btnBack->Click += gcnew System::EventHandler(this, &frmStart::btnBack_Click);
 			// 
-			// numericUpDown3
+			// numFuente
 			// 
-			this->numericUpDown3->Location = System::Drawing::Point(209, 167);
-			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(35, 20);
-			this->numericUpDown3->TabIndex = 23;
-			this->numericUpDown3->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->numFuente->Location = System::Drawing::Point(873, 604);
+			this->numFuente->Name = L"numFuente";
+			this->numFuente->Size = System::Drawing::Size(35, 20);
+			this->numFuente->TabIndex = 23;
+			this->numFuente->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// numericUpDown4
+			// numSumidero
 			// 
-			this->numericUpDown4->Location = System::Drawing::Point(428, 163);
-			this->numericUpDown4->Name = L"numericUpDown4";
-			this->numericUpDown4->Size = System::Drawing::Size(35, 20);
-			this->numericUpDown4->TabIndex = 24;
-			this->numericUpDown4->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->numSumidero->Location = System::Drawing::Point(873, 632);
+			this->numSumidero->Name = L"numSumidero";
+			this->numSumidero->Size = System::Drawing::Size(35, 20);
+			this->numSumidero->TabIndex = 24;
+			this->numSumidero->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// numericUpDown5
+			// numNodoLlegada
 			// 
-			this->numericUpDown5->Location = System::Drawing::Point(153, 264);
-			this->numericUpDown5->Name = L"numericUpDown5";
-			this->numericUpDown5->Size = System::Drawing::Size(34, 20);
-			this->numericUpDown5->TabIndex = 25;
-			this->numericUpDown5->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->numNodoLlegada->Location = System::Drawing::Point(158, 256);
+			this->numNodoLlegada->Name = L"numNodoLlegada";
+			this->numNodoLlegada->Size = System::Drawing::Size(34, 20);
+			this->numNodoLlegada->TabIndex = 25;
+			this->numNodoLlegada->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
-			// numericUpDown6
+			// numNodoSalida
 			// 
-			this->numericUpDown6->Location = System::Drawing::Point(151, 234);
-			this->numericUpDown6->Name = L"numericUpDown6";
-			this->numericUpDown6->Size = System::Drawing::Size(36, 20);
-			this->numericUpDown6->TabIndex = 26;
-			this->numericUpDown6->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			this->numNodoSalida->Location = System::Drawing::Point(151, 217);
+			this->numNodoSalida->Name = L"numNodoSalida";
+			this->numNodoSalida->Size = System::Drawing::Size(36, 20);
+			this->numNodoSalida->TabIndex = 26;
+			this->numNodoSalida->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// button1
 			// 
@@ -433,12 +434,13 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::Snow;
-			this->button1->Location = System::Drawing::Point(478, 158);
+			this->button1->Location = System::Drawing::Point(914, 597);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(63, 33);
+			this->button1->Size = System::Drawing::Size(123, 58);
 			this->button1->TabIndex = 27;
-			this->button1->Text = L"ok";
+			this->button1->Text = L"Buscar Caminos";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &frmStart::button1_Click);
 			// 
 			// button2
 			// 
@@ -449,12 +451,13 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::Color::Snow;
-			this->button2->Location = System::Drawing::Point(406, 242);
+			this->button2->Location = System::Drawing::Point(393, 236);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(114, 38);
 			this->button2->TabIndex = 28;
 			this->button2->Text = L"Asig Valor";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &frmStart::button2_Click);
 			// 
 			// button3
 			// 
@@ -466,7 +469,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::Color::Snow;
-			this->button3->Location = System::Drawing::Point(116, 197);
+			this->button3->Location = System::Drawing::Point(119, 168);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(328, 31);
 			this->button3->TabIndex = 15;
@@ -483,9 +486,9 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->button4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)),
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->button4->ForeColor = System::Drawing::Color::Snow;
-			this->button4->Location = System::Drawing::Point(162, 130);
+			this->button4->Location = System::Drawing::Point(582, 594);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(253, 31);
+			this->button4->Size = System::Drawing::Size(129, 67);
 			this->button4->TabIndex = 29;
 			this->button4->Text = L"Elegir el sumidero y la fuente";
 			this->button4->UseVisualStyleBackColor = false;
@@ -503,10 +506,10 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->numericUpDown6);
-			this->Controls->Add(this->numericUpDown5);
-			this->Controls->Add(this->numericUpDown4);
-			this->Controls->Add(this->numericUpDown3);
+			this->Controls->Add(this->numNodoSalida);
+			this->Controls->Add(this->numNodoLlegada);
+			this->Controls->Add(this->numSumidero);
+			this->Controls->Add(this->numFuente);
 			this->Controls->Add(this->btnBack);
 			this->Controls->Add(this->pictureBox6);
 			this->Controls->Add(this->pictureBox5);
@@ -541,10 +544,10 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numFuente))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numSumidero))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numNodoLlegada))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numNodoSalida))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -555,8 +558,9 @@ private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) 
 	buffer->Graphics->DrawImage(paisaje, Rectangle(0, 0, 1318, 696), Rectangle(0, 0, paisaje->Width, paisaje->Height), GraphicsUnit::Pixel);
 	buffer1->Graphics->Clear(Color::Cyan);
 
-	solucion->DibujarNodos(buffer->Graphics);
+	solucion->ObtGrafo()->DibujarGrafo(buffer->Graphics);
 	solucion->ObtGrafo()->MostrarMatrizPanel(buffer1->Graphics);
+	solucion->MostrarFlujoMaximo(buffer->Graphics);
 
 	buffer->Render(g);
 	buffer1->Render(gpanel1);
@@ -567,7 +571,7 @@ private: System::Void frmStart_MouseUp(System::Object^ sender, System::Windows::
 
 	if (585< e->X && e->X <1220 && e->Y>130 && e->Y < 475) {
 		
-		solucion->CrearNodos(e->X-13,e->Y-13);
+		solucion->ObtGrafo()->CrearNodos(e->X-13,e->Y-13);
 		
 	}
 }
@@ -630,13 +634,48 @@ private: System::Void btnDraw_Click(System::Object^ sender, System::EventArgs^ e
 
 	solucion->CrearNodoMatriz(int(numericUpDown1->Value));
 
-	numericUpDown3->Maximum = solucion->ObtGrafo()->NumAristas()-1;
-	numericUpDown4->Maximum = solucion->ObtGrafo()->NumAristas()-1;
-	numericUpDown5->Maximum = solucion->ObtGrafo()->NumAristas()-1;
-	numericUpDown6->Maximum = solucion->ObtGrafo()->NumAristas()-1;
-
-
+	numFuente->Maximum = solucion->ObtGrafo()->NumAristas()-1;
+	numSumidero->Maximum = solucion->ObtGrafo()->NumAristas()-1;
 	
+	//Asignarle sumidero por defecto
+	numSumidero->Value = numSumidero->Maximum;
+
+	//Asignar el parametro para elegir los valores
+	numNodoSalida->Maximum = solucion->ObtGrafo()->NumAristas()-1;
+	numNodoLlegada->Maximum = solucion->ObtGrafo()->NumAristas()-1;
+	
+}
+
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+			
+	if (numFuente->Value == numSumidero->Value) {
+		// IMPORTANTE-> MENSAJE DE QUE NO DEBEN SER IGUALES
+		numFuente->Value = numFuente->Minimum;
+		numSumidero->Value = numSumidero->Maximum;
+	}
+
+
+	solucion->SolucionCaminoMaximo(int(numFuente->Value),int(numSumidero->Value));
+
+}
+
+private: System::Void btnClear_Click(System::Object^ sender, System::EventArgs^ e) {
+	//se limpia todo lo creado en la pantalla de los nodos 
+	solucion->CrearNodoMatriz(0);
+
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	if (numNodoSalida->Value == numNodoLlegada->Value) {
+		// IMPORTANTE-> MENSAJE DE QUE NO DEBEN SER IGUALES
+		return;
+	}
+
+	//solucion->ObtGrafo()->matriz()->ObtPosicion(int(numNodoSalida->Value),int(numNodoLlegada->Value))->AsigCapacidad(int(numericUpDown2->Value));
+	solucion->ObtGrafo()->AgregarArcos(int(numNodoSalida->Value),int(numNodoLlegada->Value), int(numericUpDown2->Value));
+
+
+
 }
 };
 }
