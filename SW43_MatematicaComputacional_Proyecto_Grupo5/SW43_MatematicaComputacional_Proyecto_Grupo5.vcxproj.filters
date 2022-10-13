@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Etiqueta.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
     <ClInclude Include="CaminoMax.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>

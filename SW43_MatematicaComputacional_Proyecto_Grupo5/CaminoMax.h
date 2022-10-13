@@ -22,16 +22,14 @@ public:
 		grafo = new Grafos(0);
 		FlujoMaximo = 0;
 	}
-
+	~CaminoMax() {
+		delete grafo;
+	}
+	
 	void CrearNodoMatriz(int Value) {
 		delete grafo;
 		grafo = new Grafos(Value);
 	}
-
-	~CaminoMax() {
-		delete grafo;
-	}
-
 	void SolucionCaminoMaximo(int Inicio,int Final) {
 
 		//grafo->Prueba5();
@@ -52,6 +50,7 @@ public:
 	Grafos* ObtGrafo() {
 		return grafo;
 	}
+	
 
 	void MostrarFlujoMaximo(Graphics^g) {
 
@@ -61,7 +60,6 @@ public:
 		delete letra;
 
 	}
-
 
 private:
 	void EncontrarCamino(int fila, int Columna, int NodoDeLlegada) {		// 0 -- 0 = 6 // 2 -- 0 = 6// 5 -- 2 = 6

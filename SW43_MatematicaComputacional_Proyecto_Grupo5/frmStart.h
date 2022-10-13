@@ -27,15 +27,19 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 
 			solucion = new CaminoMax;
 			
-			g = this->CreateGraphics();
+			g = panel2->CreateGraphics();
 			space = BufferedGraphicsManager::Current;
-			buffer = space->Allocate(g, this->ClientRectangle);
+			buffer = space->Allocate(g, panel2->ClientRectangle);
 
 			gpanel1= panel1->CreateGraphics();
 			space1 = BufferedGraphicsManager::Current;
 			buffer1 = space1->Allocate(gpanel1, panel1->ClientRectangle);
 			
-			paisaje = gcnew Bitmap("img/frmStart13.png");
+			//aisaje = gcnew Bitmap("img/frmStart13.png");
+
+
+			ClickComp = false;
+			CirElegido = 0;
 		}
 
 	protected:
@@ -68,6 +72,8 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 		Graphics^ g;
 		
 		Bitmap^ paisaje;
+		int CirElegido;
+		bool ClickComp;
 		
 		Graphics^ gpanel1;
 		BufferedGraphicsContext^ space1;
@@ -87,9 +93,6 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
 	private: System::Windows::Forms::Label^ label3;
 
-
-
-
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label6;
@@ -103,6 +106,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Button^ btnBack;
 
 
@@ -142,6 +146,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -428,6 +433,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::Purple;
+			this->button1->Enabled = false;
 			this->button1->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
 			this->button1->FlatAppearance->BorderSize = 3;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -445,6 +451,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// button2
 			// 
 			this->button2->BackColor = System::Drawing::Color::Purple;
+			this->button2->Enabled = false;
 			this->button2->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
 			this->button2->FlatAppearance->BorderSize = 3;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
@@ -493,6 +500,16 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->button4->Text = L"Elegir el sumidero y la fuente";
 			this->button4->UseVisualStyleBackColor = false;
 			// 
+			// panel2
+			// 
+			this->panel2->Location = System::Drawing::Point(576, 109);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(699, 414);
+			this->panel2->TabIndex = 30;
+			this->panel2->MouseDown += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::panel2_MouseDown);
+			this->panel2->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::panel2_MouseMove);
+			this->panel2->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::panel2_MouseUp);
+			// 
 			// frmStart
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -502,6 +519,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->ClientSize = System::Drawing::Size(1314, 686);
+			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
@@ -535,7 +553,6 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->Name = L"frmStart";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"frmStart";
-			this->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::frmStart_MouseUp);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -555,8 +572,11 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 #pragma endregion
 
 private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) {
-	buffer->Graphics->DrawImage(paisaje, Rectangle(0, 0, 1318, 696), Rectangle(0, 0, paisaje->Width, paisaje->Height), GraphicsUnit::Pixel);
+	//buffer->Graphics->DrawImage(paisaje, Rectangle(0, 0, 1318, 696), Rectangle(0, 0, paisaje->Width, paisaje->Height), GraphicsUnit::Pixel);
+	
+	buffer->Graphics->Clear(Color::Black);
 	buffer1->Graphics->Clear(Color::Cyan);
+	
 
 	solucion->ObtGrafo()->DibujarGrafo(buffer->Graphics);
 	solucion->ObtGrafo()->MostrarMatrizPanel(buffer1->Graphics);
@@ -567,22 +587,12 @@ private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) 
 
 }
 
-private: System::Void frmStart_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-
-	if (585< e->X && e->X <1220 && e->Y>130 && e->Y < 475) {
-		
-		solucion->ObtGrafo()->CrearNodos(e->X-13,e->Y-13);
-		
-	}
-}
-
 private: System::Void btnDraw_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	btnDraw->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(114)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 		static_cast<System::Int32>(static_cast<System::Byte>(152)));
 	btnDraw->ForeColor = System::Drawing::Color::Magenta;
 	btnDraw->FlatAppearance->BorderColor = System::Drawing::Color::Magenta;
 }
-
 private: System::Void btnDraw_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	btnDraw->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(114)), static_cast<System::Int32>(static_cast<System::Byte>(20)),
 		static_cast<System::Int32>(static_cast<System::Byte>(152)));
@@ -603,30 +613,7 @@ private: System::Void btnClear_MouseLeave(System::Object^ sender, System::EventA
 	btnClear->ForeColor = System::Drawing::Color::Snow;
 	btnClear->FlatAppearance->BorderColor = System::Drawing::Color::Snow;
 }
-private: System::Void btnCheck1_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	//this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
-	//this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	//this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	//this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-}
-private: System::Void btnCheck2_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	//this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	//this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
-	//this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	//this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-}
-private: System::Void btnCheck3_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	//this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	//this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	//this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
-	//this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-}
-private: System::Void btnCheck4_MouseClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-	//this->btnCheck1->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	//this->btnCheck2->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	//this->btnCheck3->Image = System::Drawing::Image::FromFile("img\\pctButton7.png");
-	//this->btnCheck4->Image = System::Drawing::Image::FromFile("img\\pctButton6.png");
-}
+
 private: System::Void btnBack_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
@@ -644,6 +631,10 @@ private: System::Void btnDraw_Click(System::Object^ sender, System::EventArgs^ e
 	numNodoSalida->Maximum = solucion->ObtGrafo()->NumAristas()-1;
 	numNodoLlegada->Maximum = solucion->ObtGrafo()->NumAristas()-1;
 	
+	button1->Enabled = true;
+	button2->Enabled = true;
+
+
 }
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -654,14 +645,15 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		numSumidero->Value = numSumidero->Maximum;
 	}
 
-
 	solucion->SolucionCaminoMaximo(int(numFuente->Value),int(numSumidero->Value));
-
 }
 
 private: System::Void btnClear_Click(System::Object^ sender, System::EventArgs^ e) {
 	//se limpia todo lo creado en la pantalla de los nodos 
 	solucion->CrearNodoMatriz(0);
+	button1->Enabled = false;
+	button2->Enabled = false;
+
 
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -676,6 +668,39 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 
 
+}
+
+private: System::Void panel2_MouseDown(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+
+	solucion->ObtGrafo()->CrearNodos(e->X - 13, e->Y - 13);
+	if (solucion->ObtGrafo()->NumAristas() == solucion->ObtGrafo()->NumNodos()) {
+
+		for (int i = 0; i < solucion->ObtGrafo()->NumNodos(); i++) {
+
+			if (solucion->ObtGrafo()->GetCirculo(i)->GetX() <= e->X && solucion->ObtGrafo()->GetCirculo(i)->GetX() + 2 * solucion->ObtGrafo()->GetCirculo(i)->GetRadio() > e->X) {
+
+				if (solucion->ObtGrafo()->GetCirculo(i)->GetY() <= e->Y && solucion->ObtGrafo()->GetCirculo(i)->GetY() + 2 * solucion->ObtGrafo()->GetCirculo(i)->GetRadio() > e->Y) {
+
+					ClickComp = true;
+					CirElegido = i;
+
+					return;
+				}
+			}
+		}
+
+	}
+
+}	
+private: System::Void panel2_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		ClickComp = false;
+}
+private: System::Void panel2_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		
+	if (ClickComp) {
+		solucion->ObtGrafo()->GetCirculo(CirElegido)->AsigX(e->X - solucion->ObtGrafo()->GetCirculo(CirElegido)->GetRadio());
+		solucion->ObtGrafo()->GetCirculo(CirElegido)->AsigY(e->Y - solucion->ObtGrafo()->GetCirculo(CirElegido)->GetRadio());
+	}
 }
 };
 }

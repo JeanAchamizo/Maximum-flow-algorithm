@@ -1,7 +1,6 @@
 #pragma once
 #include "Dependencias.h"
 
-
 using namespace System::Drawing;
 
 class Circulo {
@@ -62,5 +61,9 @@ public:
 	int GetY() { return y; }
 	int GetID() { return ID; }
 	int GetRadio() { return radio; }
+
+
+	void AsigX(int value) { x = value; }
+	void AsigY(int value) { y = value; }
 
 };

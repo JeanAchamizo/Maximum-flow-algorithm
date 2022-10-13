@@ -114,7 +114,6 @@
     <ClInclude Include="CaminoMax.h" />
     <ClInclude Include="Circulos.h" />
     <ClInclude Include="Dependencias.h" />
-    <ClInclude Include="Etiqueta.h" />
     <ClInclude Include="Flechas.h" />
     <ClInclude Include="frmAbout.h">
       <FileType>CppForm</FileType>

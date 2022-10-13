@@ -10,11 +10,5 @@ int main() {
 	srand(time(NULL));
 	Application::Run(gcnew frmStart);
 
-	//CaminoMax* solucion;
-	//solucion = new CaminoMax;
-	//solucion->CrearNodoMatriz(9);
-	//
-	//solucion->SolucionCaminoMaximo(0,8);
-
 	return 0;
 }
