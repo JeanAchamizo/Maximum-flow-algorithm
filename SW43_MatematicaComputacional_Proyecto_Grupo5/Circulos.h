@@ -9,12 +9,12 @@ private:
 	int ID;
 	int radio;
 	int color;
+	bool ClickMov;
 public:
 	Circulo() {
 		x = 0;
 		y = 0;
 		radio = 0;
-		color = 1 + rand() % 15;
 		
 	}
 	Circulo(int posx, int posy,int nombre) {
@@ -22,7 +22,8 @@ public:
 		x = posx;
 		y = posy;
 		ID = nombre;
-		color = 1 + rand() % 20;
+		color = 1 + rand() % 15;
+		ClickMov = false;
 	}
 	~Circulo() {}
 
@@ -46,14 +47,18 @@ public:
 		else if (color == 14) { b = gcnew SolidBrush(Color::BlueViolet); }
 		else if (color == 15) { b = gcnew SolidBrush(Color::DarkOrchid); }
 		else if (color == 16) { b = gcnew SolidBrush(Color::LightSalmon); }
-		else if (color == 17) { b = gcnew SolidBrush(Color::MediumPurple); }
-		else if (color == 18) { b = gcnew SolidBrush(Color::Red); }
-		else if (color == 19) { b = gcnew SolidBrush(Color::Crimson); }
-		else if (color == 20) { b = gcnew SolidBrush(Color::MediumPurple); }
+		
 		g->FillEllipse(b, x, y, 2 * radio, 2 * radio);
+
+		Pen^ pen = gcnew Pen(Color::Yellow, 2.5f);
+
+		if (ClickMov) { g->DrawEllipse(pen, x, y, 2 * radio, 2 * radio); }
+
 		Font^ letra = gcnew Font("Arial", 14.5);
+
 		g->DrawString(Convert::ToString(ID), letra, Brushes::Snow, x + (radio / 2), y + (radio / 2));
-		//g->DrawString(Convert::ToString(ID), letra, Brushes::Snow,x,y);
+
+		delete pen;
 		delete letra;
 	}
 
@@ -65,5 +70,5 @@ public:
 
 	void AsigX(int value) { x = value; }
 	void AsigY(int value) { y = value; }
-
+	void asigClickMov(bool value) { ClickMov = value; }
 };

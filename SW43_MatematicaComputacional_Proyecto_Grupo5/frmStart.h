@@ -683,6 +683,7 @@ private: System::Void panel2_MouseDown(System::Object^ sender, System::Windows::
 
 					ClickComp = true;
 					CirElegido = i;
+					solucion->ObtGrafo()->GetCirculo(CirElegido)->asigClickMov(true);
 
 					return;
 				}
@@ -693,17 +694,24 @@ private: System::Void panel2_MouseDown(System::Object^ sender, System::Windows::
 
 }	
 private: System::Void panel2_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
+		
 		ClickComp = false;
+		if (solucion->ObtGrafo()->NumAristas() != 0 && solucion->ObtGrafo()->NumAristas() == solucion->ObtGrafo()->NumNodos()) {
+			solucion->ObtGrafo()->GetCirculo(CirElegido)->asigClickMov(false);
+		}
+		
 }
 private: System::Void panel2_MouseMove(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		
 	if (!ClickComp)return;
 
 		if (panel2->Width - 25 > e->X && 25 < e->X && panel2->Height - 25 > e->Y && 25 < e->Y ) { 
-		solucion->ObtGrafo()->GetCirculo(CirElegido)->AsigX(e->X - solucion->ObtGrafo()->GetCirculo(CirElegido)->GetRadio());
-		solucion->ObtGrafo()->GetCirculo(CirElegido)->AsigY(e->Y - solucion->ObtGrafo()->GetCirculo(CirElegido)->GetRadio());
+			solucion->ObtGrafo()->GetCirculo(CirElegido)->AsigX(e->X - solucion->ObtGrafo()->GetCirculo(CirElegido)->GetRadio());
+			solucion->ObtGrafo()->GetCirculo(CirElegido)->AsigY(e->Y - solucion->ObtGrafo()->GetCirculo(CirElegido)->GetRadio());
 		}
-}
+
+		
+	}
 
 };
 }
