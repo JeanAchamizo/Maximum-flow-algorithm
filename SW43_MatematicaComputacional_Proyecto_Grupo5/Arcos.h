@@ -31,8 +31,13 @@ public:
 	bool ExisteArco() {
 		return Existe;
 	}
+
 	void NoExiste() {
 		Existe = false;
+	}
+
+	void RestrablecerExistencia() {
+		Existe = Capacidad != 0 ;
 	}
 
 	int IndI() { return i; }

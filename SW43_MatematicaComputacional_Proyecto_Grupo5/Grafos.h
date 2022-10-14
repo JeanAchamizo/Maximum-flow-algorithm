@@ -103,8 +103,15 @@ public:
     int NumAristas() { return Vertices;}
     int NumNodos() { return nodos.size(); }
 
-
-   
+    void RestablecerAcumulacion() {
+        for (int i = 0; i < Vertices; i++) {
+            for (int j = 0; j < Vertices; j++) {
+                MatrizAdyacente->ObtPosicion(i, j)->AsigAcumulados(0);
+                MatrizAdyacente->ObtPosicion(i, j)->RestrablecerExistencia();
+            }
+        }
+    }
+    
     //Agrear el nodo de salida y de llegada con su valor
     void AgregarArcos(int i,int j,int Value) {
 

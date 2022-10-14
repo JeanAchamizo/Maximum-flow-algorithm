@@ -27,15 +27,19 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 
 			solucion = new CaminoMax;
 			
-			g = panel2->CreateGraphics();
-			space = BufferedGraphicsManager::Current;
-			buffer = space->Allocate(g, panel2->ClientRectangle);
-
 			gpanel1= panel1->CreateGraphics();
 			space1 = BufferedGraphicsManager::Current;
 			buffer1 = space1->Allocate(gpanel1, panel1->ClientRectangle);
 			
-			//aisaje = gcnew Bitmap("img/frmStart13.png");
+			g = panel2->CreateGraphics();
+			space = BufferedGraphicsManager::Current;
+			buffer = space->Allocate(g, panel2->ClientRectangle);
+
+			
+			gpanel3= panel3->CreateGraphics();
+			space3 = BufferedGraphicsManager::Current;
+			buffer3 = space3->Allocate(gpanel3, panel3->ClientRectangle);
+			
 
 
 			ClickComp = false;
@@ -66,18 +70,21 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 		/// </summary>
 
 		CaminoMax* solucion;
+		Bitmap^ paisaje;
+		int CirElegido;
+		bool ClickComp;
 
 		BufferedGraphicsContext^ space;
 		BufferedGraphics^ buffer;
 		Graphics^ g;
 		
-		Bitmap^ paisaje;
-		int CirElegido;
-		bool ClickComp;
-		
 		Graphics^ gpanel1;
 		BufferedGraphicsContext^ space1;
 		BufferedGraphics^ buffer1;
+		
+		Graphics^ gpanel3;
+		BufferedGraphicsContext^ space3;
+		BufferedGraphics^ buffer3;
 
 
 	private: System::Windows::Forms::Panel^ panel1;
@@ -106,6 +113,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Button^ btnBack;
 
@@ -147,6 +155,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
@@ -510,6 +519,13 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->panel2->MouseMove += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::panel2_MouseMove);
 			this->panel2->MouseUp += gcnew System::Windows::Forms::MouseEventHandler(this, &frmStart::panel2_MouseUp);
 			// 
+			// panel3
+			// 
+			this->panel3->Location = System::Drawing::Point(1101, 592);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(163, 64);
+			this->panel3->TabIndex = 31;
+			// 
 			// frmStart
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -519,6 +535,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->ClientSize = System::Drawing::Size(1314, 686);
+			this->Controls->Add(this->panel3);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
@@ -575,15 +592,22 @@ private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) 
 	//buffer->Graphics->DrawImage(paisaje, Rectangle(0, 0, 1318, 696), Rectangle(0, 0, paisaje->Width, paisaje->Height), GraphicsUnit::Pixel);
 	
 	buffer->Graphics->Clear(Color::Black);
+	buffer3->Graphics->Clear(Color::Black);
+
 	buffer1->Graphics->Clear(Color::Cyan);
 	
 
 	solucion->ObtGrafo()->DibujarGrafo(buffer->Graphics);
 	solucion->ObtGrafo()->MostrarMatrizPanel(buffer1->Graphics);
-	solucion->MostrarFlujoMaximo(buffer->Graphics);
+	solucion->MostrarFlujoMaximo(buffer3->Graphics);
 
 	buffer->Render(g);
 	buffer1->Render(gpanel1);
+	
+	buffer3->Render(gpanel3);
+
+
+
 
 }
 
@@ -644,7 +668,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 		numFuente->Value = numFuente->Minimum;
 		numSumidero->Value = numSumidero->Maximum;
 	}
-
+	solucion->ObtGrafo()->RestablecerAcumulacion();
 	solucion->SolucionCaminoMaximo(int(numFuente->Value),int(numSumidero->Value));
 }
 

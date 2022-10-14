@@ -55,7 +55,7 @@ public:
 	void MostrarFlujoMaximo(Graphics^g) {
 
 		Font^ letra = gcnew Font("Arial", 50);
-		g->DrawString(Convert::ToString(FlujoMaximo), letra, Brushes::Snow,1122,584);
+		g->DrawString(Convert::ToString(FlujoMaximo), letra, Brushes::Snow,0,0);
 		//g->DrawString(Convert::ToString(ID), letra, Brushes::Snow,x,y);
 		delete letra;
 
