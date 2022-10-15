@@ -8,7 +8,7 @@ using namespace SW43MatematicaComputacionalProyectoGrupo5;
 
 int main() {
 	srand(time(NULL));
-	Application::Run(gcnew frmStart);
+	Application::Run(gcnew frmMenu);
 
 	return 0;
 }
