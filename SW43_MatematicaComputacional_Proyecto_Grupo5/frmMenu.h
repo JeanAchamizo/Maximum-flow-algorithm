@@ -267,9 +267,9 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// imgLogoUPC
 			// 
 			this->imgLogoUPC->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgLogoUPC.Image")));
-			this->imgLogoUPC->Location = System::Drawing::Point(848, 340);
+			this->imgLogoUPC->Location = System::Drawing::Point(849, 365);
 			this->imgLogoUPC->Name = L"imgLogoUPC";
-			this->imgLogoUPC->Size = System::Drawing::Size(424, 289);
+			this->imgLogoUPC->Size = System::Drawing::Size(418, 243);
 			this->imgLogoUPC->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgLogoUPC->TabIndex = 24;
 			this->imgLogoUPC->TabStop = false;
