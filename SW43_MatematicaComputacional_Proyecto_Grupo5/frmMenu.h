@@ -81,6 +81,11 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	private: System::Windows::Forms::PictureBox^ imgbtnStart;
 	private: System::Windows::Forms::PictureBox^ imgGrafico;
 	private: System::Windows::Forms::PictureBox^ imgLogoUPC;
+	private: System::Windows::Forms::PictureBox^ imgDespedida;
+	private: System::Windows::Forms::PictureBox^ imgManual;
+	private: System::Windows::Forms::PictureBox^ imgLibro;
+
+
 
 
 
@@ -126,6 +131,9 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgbtnStart = (gcnew System::Windows::Forms::PictureBox());
 			this->imgGrafico = (gcnew System::Windows::Forms::PictureBox());
 			this->imgLogoUPC = (gcnew System::Windows::Forms::PictureBox());
+			this->imgDespedida = (gcnew System::Windows::Forms::PictureBox());
+			this->imgManual = (gcnew System::Windows::Forms::PictureBox());
+			this->imgLibro = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnIcon))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnLeft))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnRight))->BeginInit();
@@ -138,6 +146,9 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnStart))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgGrafico))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgLogoUPC))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgDespedida))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgManual))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgLibro))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnIcon
@@ -257,9 +268,9 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// imgGrafico
 			// 
 			this->imgGrafico->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgGrafico.Image")));
-			this->imgGrafico->Location = System::Drawing::Point(772, 340);
+			this->imgGrafico->Location = System::Drawing::Point(819, 266);
 			this->imgGrafico->Name = L"imgGrafico";
-			this->imgGrafico->Size = System::Drawing::Size(529, 289);
+			this->imgGrafico->Size = System::Drawing::Size(513, 400);
 			this->imgGrafico->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgGrafico->TabIndex = 23;
 			this->imgGrafico->TabStop = false;
@@ -267,13 +278,46 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// imgLogoUPC
 			// 
 			this->imgLogoUPC->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgLogoUPC.Image")));
-			this->imgLogoUPC->Location = System::Drawing::Point(849, 365);
+			this->imgLogoUPC->Location = System::Drawing::Point(819, 312);
 			this->imgLogoUPC->Name = L"imgLogoUPC";
-			this->imgLogoUPC->Size = System::Drawing::Size(418, 243);
+			this->imgLogoUPC->Size = System::Drawing::Size(513, 306);
 			this->imgLogoUPC->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgLogoUPC->TabIndex = 24;
 			this->imgLogoUPC->TabStop = false;
 			this->imgLogoUPC->Visible = false;
+			// 
+			// imgDespedida
+			// 
+			this->imgDespedida->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgDespedida.Image")));
+			this->imgDespedida->Location = System::Drawing::Point(819, 304);
+			this->imgDespedida->Name = L"imgDespedida";
+			this->imgDespedida->Size = System::Drawing::Size(513, 339);
+			this->imgDespedida->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgDespedida->TabIndex = 25;
+			this->imgDespedida->TabStop = false;
+			this->imgDespedida->Visible = false;
+			// 
+			// imgManual
+			// 
+			this->imgManual->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgManual.Image")));
+			this->imgManual->Location = System::Drawing::Point(819, 304);
+			this->imgManual->Name = L"imgManual";
+			this->imgManual->Size = System::Drawing::Size(513, 314);
+			this->imgManual->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgManual->TabIndex = 26;
+			this->imgManual->TabStop = false;
+			this->imgManual->Visible = false;
+			// 
+			// imgLibro
+			// 
+			this->imgLibro->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgLibro.Image")));
+			this->imgLibro->Location = System::Drawing::Point(819, 309);
+			this->imgLibro->Name = L"imgLibro";
+			this->imgLibro->Size = System::Drawing::Size(513, 314);
+			this->imgLibro->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgLibro->TabIndex = 27;
+			this->imgLibro->TabStop = false;
+			this->imgLibro->Visible = false;
 			// 
 			// frmMenu
 			// 
@@ -282,6 +326,9 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->BackColor = System::Drawing::SystemColors::Desktop;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1344, 681);
+			this->Controls->Add(this->imgLibro);
+			this->Controls->Add(this->imgManual);
+			this->Controls->Add(this->imgDespedida);
 			this->Controls->Add(this->imgLogoUPC);
 			this->Controls->Add(this->imgGrafico);
 			this->Controls->Add(this->btnIcon);
@@ -312,6 +359,9 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnStart))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgGrafico))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgLogoUPC))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgDespedida))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgManual))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgLibro))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -323,25 +373,37 @@ private: System::Void btnIcon_MouseEnter(System::Object^ sender, System::EventAr
 	if (Position == 1) {
 		this->btnIcon->Image = System::Drawing::Image::FromFile("imgMenu\\btnInstructions2.png");
 		this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection2.png");
+		SoundPlayer^ Instructions = gcnew SoundPlayer();
+		Instructions->SoundLocation = "imgMenu/soundInstructions.wav";
+		Instructions->Play();
 	}
 	if (Position == 2) {
 		this->btnIcon->Image = System::Drawing::Image::FromFile("imgMenu\\btnTheory2.png");
 		this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection2.png");
+		SoundPlayer^ Theory = gcnew SoundPlayer();
+		Theory->SoundLocation = "imgMenu/soundTheory.wav";
+		Theory->Play();
 	}
 	if (Position == 3) {
 		this->btnIcon->Image = System::Drawing::Image::FromFile("imgMenu\\btnStart2.png");
 		this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection2.png");
 		SoundPlayer^ Player = gcnew SoundPlayer();
-		Player->SoundLocation = "imgMenu/musicThemeButton.wav";
+		Player->SoundLocation = "imgMenu/soundStart.wav";
 		Player->Play();
 	}
 	if (Position == 4) {
 		this->btnIcon->Image = System::Drawing::Image::FromFile("imgMenu\\btnExit2.png");
 		this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection2.png");
+		SoundPlayer^ Exit = gcnew SoundPlayer();
+		Exit->SoundLocation = "imgMenu/soundExit.wav";
+		Exit->Play();
 	}
 	if (Position == 5) {
 		this->btnIcon->Image = System::Drawing::Image::FromFile("imgMenu\\btnAbout2.png");
 		this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection2.png");
+		SoundPlayer^ About = gcnew SoundPlayer();
+		About->SoundLocation = "imgMenu/soundAbout.wav";
+		About->Play();
 	}
 }
 
@@ -351,25 +413,37 @@ private: System::Void btnIcon_MouseLeave(System::Object^ sender, System::EventAr
 	if (Position == 1) {
 		this->btnIcon->Image = System::Drawing::Image::FromFile("imgMenu\\btnInstructions.png");
 		this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection.png");
+		SoundPlayer^ Instructions = gcnew SoundPlayer();
+		Instructions->SoundLocation = "imgMenu/soundInstructions.wav";
+		Instructions->Stop();
 	}
 	if (Position == 2) {
 		this->btnIcon->Image = System::Drawing::Image::FromFile("imgMenu\\btnTheory.png");
 		this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection.png");
+		SoundPlayer^ Theory = gcnew SoundPlayer();
+		Theory->SoundLocation = "imgMenu/soundTheory.wav";
+		Theory->Stop();
 	}
 	if (Position == 3) {
 		this->btnIcon->Image = System::Drawing::Image::FromFile("imgMenu\\btnStart.png");
 		this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection.png");
 		SoundPlayer^ Player = gcnew SoundPlayer();
-		Player->SoundLocation = "imgMenu/musicThemeButton.wav";
+		Player->SoundLocation = "imgMenu/soundStart.wav";
 		Player->Stop();
 	}
 	if (Position == 4) {
 		this->btnIcon->Image = System::Drawing::Image::FromFile("imgMenu\\btnExit.png");
 		this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection.png");
+		SoundPlayer^ Exit = gcnew SoundPlayer();
+		Exit->SoundLocation = "imgMenu/soundExit.wav";
+		Exit->Stop();
 	}
 	if (Position == 5) {
 		this->btnIcon->Image = System::Drawing::Image::FromFile("imgMenu\\btnAbout.png");
 		this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection.png");
+		SoundPlayer^ About = gcnew SoundPlayer();
+		About->SoundLocation = "imgMenu/soundAbout.wav";
+		About->Stop();
 	}
 
 }
@@ -415,19 +489,25 @@ private: System::Void btnIcon_Click(System::Object^ sender, System::EventArgs^ e
 
 private: System::Void btnLeft_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	this->btnLeft->Image = System::Drawing::Image::FromFile("imgMenu\\btnLeft2.png");
-	this->btnLeft->Image = System::Drawing::Image::FromFile("imgMenu\\btnLeft2.png");
+	this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection2.png");
 }
 private: System::Void btnLeft_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	this->btnLeft->Image = System::Drawing::Image::FromFile("imgMenu\\btnLeft.png");
+	this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection.png");
 }
 private: System::Void btnRight_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	this->btnRight->Image = System::Drawing::Image::FromFile("imgMenu\\btnRight2.png");
+	this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection2.png");
 }
 private: System::Void btnRight_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	this->btnRight->Image = System::Drawing::Image::FromFile("imgMenu\\btnRight.png");
+	this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection.png");
 }
 
 private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e) {
+	SoundPlayer^ Arrow = gcnew SoundPlayer();
+	Arrow->SoundLocation = "imgMenu/soundArrow.wav";
+	Arrow->Play();
 	PositionListCir(-1);
 	if (Position == 1) { 
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnInstructions2.png");
@@ -436,6 +516,11 @@ private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e
 		imgbtnAbout->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnStart.png");
 		imgbtnExit->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnTheory.png");
 		btnIcon->Image = System::Drawing::Image::FromFile("imgMenu/btnInstructions.png");
+		imgGrafico->Visible = false;
+		imgLogoUPC->Visible = false;
+		imgDespedida->Visible = false;
+		imgManual->Visible = true;
+		imgLibro->Visible = false;
 	}
 	else if (Position ==2 ) {
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnTheory2.png");
@@ -444,6 +529,11 @@ private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e
 		imgbtnAbout->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnExit.png");
 		imgbtnExit->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnStart.png");
 		btnIcon->Image = System::Drawing::Image::FromFile("imgMenu/btnTheory.png");
+		imgGrafico->Visible = false;
+		imgLogoUPC->Visible = false;
+		imgDespedida->Visible = false;
+		imgManual->Visible = false;
+		imgLibro->Visible = true;
 	}
 	else if (Position ==3 ) {
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnStart2.png");
@@ -454,6 +544,9 @@ private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e
 		btnIcon->Image = System::Drawing::Image::FromFile("imgMenu/btnStart.png");
 		imgGrafico->Visible = true;
 		imgLogoUPC->Visible = false;
+		imgDespedida->Visible = false;
+		imgManual->Visible = false;
+		imgLibro->Visible = false;
 	}
 	else if (Position ==4 ) {
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnExit2.png");
@@ -462,6 +555,11 @@ private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e
 		imgbtnAbout->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnInstructions.png");
 		imgbtnExit->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnAbout.png");
 		btnIcon->Image = System::Drawing::Image::FromFile("imgMenu/btnExit.png");
+		imgGrafico->Visible = false;
+		imgLogoUPC->Visible = false;
+		imgDespedida->Visible = true;
+		imgManual->Visible = false;
+		imgLibro->Visible = false;
 	}
 	else if (Position ==5 ) {
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnAbout2.png");
@@ -472,11 +570,17 @@ private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e
 		btnIcon->Image = System::Drawing::Image::FromFile("imgMenu/btnAbout.png");
 		imgGrafico->Visible = false;
 		imgLogoUPC->Visible = true;
+		imgDespedida->Visible = false;
+		imgManual->Visible = false;
+		imgManual->Visible = false;
+		imgLibro->Visible = false;
 	}
 		
 }
 private: System::Void btnRight_Click(System::Object^ sender, System::EventArgs^ e) {
-
+	SoundPlayer^ Arrow = gcnew SoundPlayer();
+	Arrow->SoundLocation = "imgMenu/soundArrow.wav";
+	Arrow->Play();
 	PositionListCir(1);
 	if (Position == 1) {
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnInstructions2.png");
@@ -485,6 +589,11 @@ private: System::Void btnRight_Click(System::Object^ sender, System::EventArgs^ 
 		imgbtnAbout->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnStart.png");
 		imgbtnExit->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnTheory.png");
 		btnIcon->Image = System::Drawing::Image::FromFile("imgMenu/btnInstructions.png");
+		imgGrafico->Visible = false;
+		imgLogoUPC->Visible = false;
+		imgDespedida->Visible = false;
+		imgManual->Visible = true;
+		imgLibro->Visible = false;
 	}
 	else if (Position == 2) {
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnTheory2.png");
@@ -493,6 +602,11 @@ private: System::Void btnRight_Click(System::Object^ sender, System::EventArgs^ 
 		imgbtnAbout->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnExit.png");
 		imgbtnExit->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnStart.png");
 		btnIcon->Image = System::Drawing::Image::FromFile("imgMenu/btnTheory.png");
+		imgGrafico->Visible = false;
+		imgLogoUPC->Visible = false;
+		imgDespedida->Visible = false;
+		imgManual->Visible = false;
+		imgLibro->Visible = true;
 	}
 	else if (Position == 3) {
 		imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnStart2.png");
@@ -503,6 +617,9 @@ private: System::Void btnRight_Click(System::Object^ sender, System::EventArgs^ 
 		btnIcon->Image = System::Drawing::Image::FromFile("imgMenu/btnStart.png");
 		imgGrafico->Visible = true;
 		imgLogoUPC->Visible = false;
+		imgDespedida->Visible = false;
+		imgManual->Visible = false;
+		imgLibro->Visible = false;
 	}
 	else if (Position == 4) {
 		//this->imgBotones->Image = System::Drawing::Image::FromFile("imgMenu/frmMenuT.png");
@@ -512,6 +629,11 @@ private: System::Void btnRight_Click(System::Object^ sender, System::EventArgs^ 
 		imgbtnInstructions->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnTheory.png");
 		imgbtnAbout->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnInstructions.png");
 		imgbtnExit->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnAbout.png");
+		imgGrafico->Visible = false;
+		imgLogoUPC->Visible = false;
+		imgDespedida->Visible = true;
+		imgManual->Visible = false;
+		imgLibro->Visible = false;
 	}
 	else if (Position == 5) {
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnAbout2.png");
@@ -522,6 +644,9 @@ private: System::Void btnRight_Click(System::Object^ sender, System::EventArgs^ 
 		btnIcon->Image = System::Drawing::Image::FromFile("imgMenu/btnAbout.png");
 		imgGrafico->Visible = false;
 		imgLogoUPC->Visible = true;
+		imgDespedida->Visible = false;
+		imgManual->Visible = false;
+		imgLibro->Visible = false;
 	}
 }
 
