@@ -431,17 +431,9 @@ private: System::Void imgbtnBack_MouseLeave(System::Object^ sender, System::Even
 	this->imgbtnBack->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnBack.png");
 }
 private: System::Void imgbtnBack_Click(System::Object^ sender, System::EventArgs^ e) {
-	//frmMenu^ frm = gcnew frmMenu();
-	//SW43MatematicaComputacionalProyectoGrupo5::frmMenu^ frm = gcnew SW43MatematicaComputacionalProyectoGrupo5::frmMenu();
-	//Esconder el formulario Menu
-	//Application::Run(gcnew frmMenu);
-	//this->Visible = false;
-	//this->Hide();
-	//Mostrar el contenido del formulario About
-	//frm->ShowDialog();
-	//Cerrar el formulario About
-	//Application::Exit();
-	//this->Close();
+
+	// close the aplication 
+	this->Close();
 }
 };
 }

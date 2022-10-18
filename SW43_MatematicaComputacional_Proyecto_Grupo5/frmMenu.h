@@ -42,41 +42,16 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			}
 		}
 
-
-	
-
-
-
-
-
 	protected:
 
 	private: System::Windows::Forms::PictureBox^ btnIcon;
-
-
-
-
-
 	private: System::Windows::Forms::PictureBox^ btnLeft;
 	private: System::Windows::Forms::PictureBox^ btnRight;
-
-
-
-
-
-
-
 	private: System::ComponentModel::IContainer^ components;
 	private: System::Windows::Forms::PictureBox^ imgTitleMenu;
-
 	private: System::Windows::Forms::PictureBox^ imgbtnAbout;
-
-
-
 	private: System::Windows::Forms::PictureBox^ imgbtnInstructions;
 	private: System::Windows::Forms::PictureBox^ imgSelection;
-
-
 	private: System::Windows::Forms::PictureBox^ imgbtnTheory;
 	private: System::Windows::Forms::PictureBox^ imgbtnExit;
 	private: System::Windows::Forms::PictureBox^ imgbtnStart;
@@ -87,33 +62,6 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	private: System::Windows::Forms::PictureBox^ imgLibro;
 	private: System::Windows::Forms::PictureBox^ imgFondo;
 	private: System::Windows::Forms::PictureBox^ imgbtnBack;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	protected:
 
 	protected:
 
@@ -448,6 +396,7 @@ private: System::Void btnIcon_MouseEnter(System::Object^ sender, System::EventAr
 		About->SoundLocation = "imgMenu/soundAbout.wav";
 		About->Play();
 	}
+
 }
 
 //Evento cuando el mouse sale del botón Start
@@ -496,15 +445,15 @@ private: System::Void btnIcon_Click(System::Object^ sender, System::EventArgs^ e
 	
 	if (Position == 1) {
 		//Llamar al formulario About
-		frmAbout^ frm = gcnew frmAbout();
+		//frmAbout^ frm = gcnew frmAbout();
 		//Esconder el formulario Menu
-		this->Visible = false;
+		//this->Visible = true;
 		//this->Hide();
 		//Mostrar el contenido del formulario About
-		frm->ShowDialog();
+		//frm->ShowDialog();
 		//Cerrar el formulario About
 		//this->Close();
-		this->Visible = true;
+		//this->Visible = true;
 	}
 	if (Position == 2) {
 		//Llamar al formulario Theory
@@ -528,44 +477,9 @@ private: System::Void btnIcon_Click(System::Object^ sender, System::EventArgs^ e
 		Application::Exit();
 	}
 	if (Position == 5) {
-		//this->imgFondo->Image = System::Drawing::Image::FromFile("imgMenu\\imgfrmAbout.png");
-		//this->imgFondo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-		//this->imgFondo->BackColor = System::Drawing::Color::White;
-		//this->BackColor = System::Drawing::SystemColors::Menu;
 		//Llamar al formulario About
 		frmAbout^ frm = gcnew frmAbout();
-		//Esconder el formulario Menu
-		//this->Visible = false;
-		this->Hide();
-		//Mostrar el contenido del formulario About
 		frm->ShowDialog();
-		//Cerrar el formulario About
-		//frmMenu::imgbtnBack->Enabled = true;
-		//imgbtnBack->Visible = true;
-		this->Close();
-		//this->Visible = true;
-		imgFondo->Visible = false;
-		imgGrafico->Visible = false;
-		imgLogoUPC->Visible = false;
-		imgDespedida->Visible = false;
-		imgManual->Visible = false;
-		imgLibro->Visible = false;
-		imgTitleMenu->Visible = false;
-		imgSelection->Visible = false;
-		btnIcon->Visible = false;
-		imgbtnAbout->Visible = false;
-		imgbtnExit->Visible = false;
-		imgbtnTheory->Visible = false;
-		imgbtnInstructions->Visible = false;
-		imgbtnStart->Visible = false;
-		btnLeft->Visible = false;
-		btnRight->Visible = false;
-		//imgFlechaTemporal->Visible = true;
-		//imgbtnBernardo->Visible = true;
-		//imgbtnCharlie->Visible = true;
-		//imgbtnErick->Visible = true;
-		//imgbtnHansel->Visible = true;
-		//imgbtnKathy->Visible = true;
 	}
 }
 
@@ -604,7 +518,8 @@ private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e
 		imgManual->Visible = true;
 		imgLibro->Visible = false;
 	}
-	else if (Position ==2 ) {
+
+	else if (Position == 2 ) {
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnTheory2.png");
 		imgbtnTheory->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnInstructions.png");
 		imgbtnInstructions->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnAbout.png");
@@ -617,7 +532,8 @@ private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e
 		imgManual->Visible = false;
 		imgLibro->Visible = true;
 	}
-	else if (Position ==3 ) {
+
+	else if (Position == 3 ) {
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnStart2.png");
 		imgbtnTheory->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnTheory.png");
 		imgbtnInstructions->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnInstructions.png");
@@ -630,7 +546,8 @@ private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e
 		imgManual->Visible = false;
 		imgLibro->Visible = false;
 	}
-	else if (Position ==4 ) {
+	
+	else if (Position == 4 ) {
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnExit2.png");
 		imgbtnTheory->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnStart.png");
 		imgbtnInstructions->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnTheory.png");
@@ -643,7 +560,8 @@ private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e
 		imgManual->Visible = false;
 		imgLibro->Visible = false;
 	}
-	else if (Position ==5 ) {
+	
+	else if (Position == 5 ) {
 		this->imgbtnStart->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnAbout2.png");
 		imgbtnTheory->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnExit.png");
 		imgbtnInstructions->Image = System::Drawing::Image::FromFile("imgMenu/imgbtnStart.png");

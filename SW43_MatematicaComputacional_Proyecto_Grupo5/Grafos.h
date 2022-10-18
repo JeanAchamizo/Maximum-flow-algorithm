@@ -115,7 +115,7 @@ public:
     //Agrear el nodo de salida y de llegada con su valor
     void AgregarArcos(int i,int j,int Value) {
 
-        if (nodos.size()>=i && nodos.size()>=j) {
+        if (nodos.size()>i && nodos.size()>j) {
             arcos.push_back(new Flecha(nodos[i],nodos[j]));
             MatrizAdyacente->ObtPosicion(i,j)->AsigCapacidad(Value);
         }
