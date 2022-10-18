@@ -59,7 +59,17 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	private: System::Windows::Forms::PictureBox^ imgPhoto;
 	private: System::Windows::Forms::PictureBox^ imgDescription;
 	private: System::Windows::Forms::PictureBox^ imgCode;
-	public: System::Windows::Forms::PictureBox^ imgbtnBack;
+	public: System::Windows::Forms::PictureBox^ imgbtnBackPreview;
+	private:
+	public: System::Windows::Forms::PictureBox^ imgbtnNextPreview;
+	public: System::Windows::Forms::PictureBox^ imgbtnBackAbout;
+	private: System::Windows::Forms::PictureBox^ imgbtnHomeAbout;
+	private: System::Windows::Forms::PictureBox^ imgbtnTeacher;
+	private: System::Windows::Forms::PictureBox^ imgbtnMattos;
+	private: System::Windows::Forms::PictureBox^ imgbtnGroup;
+
+	public:
+
 	private:
 
 
@@ -85,7 +95,13 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgPhoto = (gcnew System::Windows::Forms::PictureBox());
 			this->imgDescription = (gcnew System::Windows::Forms::PictureBox());
 			this->imgCode = (gcnew System::Windows::Forms::PictureBox());
-			this->imgbtnBack = (gcnew System::Windows::Forms::PictureBox());
+			this->imgbtnBackPreview = (gcnew System::Windows::Forms::PictureBox());
+			this->imgbtnNextPreview = (gcnew System::Windows::Forms::PictureBox());
+			this->imgbtnBackAbout = (gcnew System::Windows::Forms::PictureBox());
+			this->imgbtnHomeAbout = (gcnew System::Windows::Forms::PictureBox());
+			this->imgbtnTeacher = (gcnew System::Windows::Forms::PictureBox());
+			this->imgbtnMattos = (gcnew System::Windows::Forms::PictureBox());
+			this->imgbtnGroup = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnKathy))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnBernardo))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnErick))->BeginInit();
@@ -98,7 +114,13 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgPhoto))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgDescription))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgCode))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnBack))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnBackPreview))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnNextPreview))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnBackAbout))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnHomeAbout))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnTeacher))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnMattos))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnGroup))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// imgbtnKathy
@@ -111,6 +133,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgbtnKathy->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgbtnKathy->TabIndex = 40;
 			this->imgbtnKathy->TabStop = false;
+			this->imgbtnKathy->Visible = false;
 			// 
 			// imgbtnBernardo
 			// 
@@ -122,6 +145,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgbtnBernardo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgbtnBernardo->TabIndex = 39;
 			this->imgbtnBernardo->TabStop = false;
+			this->imgbtnBernardo->Visible = false;
 			// 
 			// imgbtnErick
 			// 
@@ -133,6 +157,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgbtnErick->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgbtnErick->TabIndex = 38;
 			this->imgbtnErick->TabStop = false;
+			this->imgbtnErick->Visible = false;
 			// 
 			// imgbtnCharlie
 			// 
@@ -144,6 +169,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgbtnCharlie->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgbtnCharlie->TabIndex = 37;
 			this->imgbtnCharlie->TabStop = false;
+			this->imgbtnCharlie->Visible = false;
 			// 
 			// imgbtnHansel
 			// 
@@ -155,6 +181,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgbtnHansel->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgbtnHansel->TabIndex = 36;
 			this->imgbtnHansel->TabStop = false;
+			this->imgbtnHansel->Visible = false;
 			// 
 			// imgFlechaTemporal
 			// 
@@ -166,6 +193,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgFlechaTemporal->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgFlechaTemporal->TabIndex = 35;
 			this->imgFlechaTemporal->TabStop = false;
+			this->imgFlechaTemporal->Visible = false;
 			// 
 			// imgFondo
 			// 
@@ -187,6 +215,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->btnLeft->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->btnLeft->TabIndex = 42;
 			this->btnLeft->TabStop = false;
+			this->btnLeft->Visible = false;
 			this->btnLeft->Click += gcnew System::EventHandler(this, &frmAbout::btnLeft_Click);
 			this->btnLeft->MouseEnter += gcnew System::EventHandler(this, &frmAbout::btnLeft_MouseEnter);
 			this->btnLeft->MouseLeave += gcnew System::EventHandler(this, &frmAbout::btnLeft_MouseLeave);
@@ -200,6 +229,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->btnRight->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->btnRight->TabIndex = 43;
 			this->btnRight->TabStop = false;
+			this->btnRight->Visible = false;
 			this->btnRight->Click += gcnew System::EventHandler(this, &frmAbout::btnRight_Click);
 			this->btnRight->MouseEnter += gcnew System::EventHandler(this, &frmAbout::btnRight_MouseEnter);
 			this->btnRight->MouseLeave += gcnew System::EventHandler(this, &frmAbout::btnRight_MouseLeave);
@@ -212,6 +242,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgPhoto->Size = System::Drawing::Size(265, 275);
 			this->imgPhoto->TabIndex = 44;
 			this->imgPhoto->TabStop = false;
+			this->imgPhoto->Visible = false;
 			// 
 			// imgDescription
 			// 
@@ -222,6 +253,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgDescription->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgDescription->TabIndex = 45;
 			this->imgDescription->TabStop = false;
+			this->imgDescription->Visible = false;
 			// 
 			// imgCode
 			// 
@@ -232,20 +264,103 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgCode->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgCode->TabIndex = 46;
 			this->imgCode->TabStop = false;
+			this->imgCode->Visible = false;
 			// 
-			// imgbtnBack
+			// imgbtnBackPreview
 			// 
-			this->imgbtnBack->BackColor = System::Drawing::Color::White;
-			this->imgbtnBack->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgbtnBack.Image")));
-			this->imgbtnBack->Location = System::Drawing::Point(979, 540);
-			this->imgbtnBack->Name = L"imgbtnBack";
-			this->imgbtnBack->Size = System::Drawing::Size(113, 110);
-			this->imgbtnBack->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->imgbtnBack->TabIndex = 49;
-			this->imgbtnBack->TabStop = false;
-			this->imgbtnBack->Click += gcnew System::EventHandler(this, &frmAbout::imgbtnBack_Click);
-			this->imgbtnBack->MouseEnter += gcnew System::EventHandler(this, &frmAbout::imgbtnBack_MouseEnter);
-			this->imgbtnBack->MouseLeave += gcnew System::EventHandler(this, &frmAbout::imgbtnBack_MouseLeave);
+			this->imgbtnBackPreview->BackColor = System::Drawing::Color::White;
+			this->imgbtnBackPreview->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgbtnBackPreview.Image")));
+			this->imgbtnBackPreview->Location = System::Drawing::Point(780, 540);
+			this->imgbtnBackPreview->Name = L"imgbtnBackPreview";
+			this->imgbtnBackPreview->Size = System::Drawing::Size(113, 110);
+			this->imgbtnBackPreview->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgbtnBackPreview->TabIndex = 49;
+			this->imgbtnBackPreview->TabStop = false;
+			this->imgbtnBackPreview->Click += gcnew System::EventHandler(this, &frmAbout::imgbtnBackPreview_Click);
+			this->imgbtnBackPreview->MouseEnter += gcnew System::EventHandler(this, &frmAbout::imgbtnBackPreview_MouseEnter);
+			this->imgbtnBackPreview->MouseLeave += gcnew System::EventHandler(this, &frmAbout::imgbtnBackPreview_MouseLeave);
+			// 
+			// imgbtnNextPreview
+			// 
+			this->imgbtnNextPreview->BackColor = System::Drawing::Color::White;
+			this->imgbtnNextPreview->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgbtnNextPreview.Image")));
+			this->imgbtnNextPreview->Location = System::Drawing::Point(1098, 540);
+			this->imgbtnNextPreview->Name = L"imgbtnNextPreview";
+			this->imgbtnNextPreview->Size = System::Drawing::Size(113, 110);
+			this->imgbtnNextPreview->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgbtnNextPreview->TabIndex = 50;
+			this->imgbtnNextPreview->TabStop = false;
+			this->imgbtnNextPreview->Click += gcnew System::EventHandler(this, &frmAbout::imgbtnNextPreview_Click);
+			this->imgbtnNextPreview->MouseEnter += gcnew System::EventHandler(this, &frmAbout::imgbtnNextPreview_MouseEnter);
+			this->imgbtnNextPreview->MouseLeave += gcnew System::EventHandler(this, &frmAbout::imgbtnNextPreview_MouseLeave);
+			// 
+			// imgbtnBackAbout
+			// 
+			this->imgbtnBackAbout->BackColor = System::Drawing::Color::White;
+			this->imgbtnBackAbout->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgbtnBackAbout.Image")));
+			this->imgbtnBackAbout->Location = System::Drawing::Point(579, 533);
+			this->imgbtnBackAbout->Name = L"imgbtnBackAbout";
+			this->imgbtnBackAbout->Size = System::Drawing::Size(113, 110);
+			this->imgbtnBackAbout->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgbtnBackAbout->TabIndex = 51;
+			this->imgbtnBackAbout->TabStop = false;
+			this->imgbtnBackAbout->Visible = false;
+			this->imgbtnBackAbout->Click += gcnew System::EventHandler(this, &frmAbout::imgbtnBackAbout_Click);
+			this->imgbtnBackAbout->MouseEnter += gcnew System::EventHandler(this, &frmAbout::imgbtnBackAbout_MouseEnter);
+			this->imgbtnBackAbout->MouseLeave += gcnew System::EventHandler(this, &frmAbout::imgbtnBackAbout_MouseLeave);
+			// 
+			// imgbtnHomeAbout
+			// 
+			this->imgbtnHomeAbout->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgbtnHomeAbout.Image")));
+			this->imgbtnHomeAbout->Location = System::Drawing::Point(979, 540);
+			this->imgbtnHomeAbout->Name = L"imgbtnHomeAbout";
+			this->imgbtnHomeAbout->Size = System::Drawing::Size(113, 92);
+			this->imgbtnHomeAbout->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgbtnHomeAbout->TabIndex = 52;
+			this->imgbtnHomeAbout->TabStop = false;
+			this->imgbtnHomeAbout->Visible = false;
+			this->imgbtnHomeAbout->Click += gcnew System::EventHandler(this, &frmAbout::imgbtnHomeAbout_Click);
+			this->imgbtnHomeAbout->MouseEnter += gcnew System::EventHandler(this, &frmAbout::imgbtnHomeAbout_MouseEnter);
+			this->imgbtnHomeAbout->MouseLeave += gcnew System::EventHandler(this, &frmAbout::imgbtnHomeAbout_MouseLeave);
+			// 
+			// imgbtnTeacher
+			// 
+			this->imgbtnTeacher->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgbtnTeacher.Image")));
+			this->imgbtnTeacher->Location = System::Drawing::Point(847, 540);
+			this->imgbtnTeacher->Name = L"imgbtnTeacher";
+			this->imgbtnTeacher->Size = System::Drawing::Size(113, 92);
+			this->imgbtnTeacher->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgbtnTeacher->TabIndex = 53;
+			this->imgbtnTeacher->TabStop = false;
+			this->imgbtnTeacher->Visible = false;
+			this->imgbtnTeacher->Click += gcnew System::EventHandler(this, &frmAbout::imgbtnTeacher_Click);
+			this->imgbtnTeacher->MouseEnter += gcnew System::EventHandler(this, &frmAbout::imgbtnTeacher_MouseEnter);
+			this->imgbtnTeacher->MouseLeave += gcnew System::EventHandler(this, &frmAbout::imgbtnTeacher_MouseLeave);
+			// 
+			// imgbtnMattos
+			// 
+			this->imgbtnMattos->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgbtnMattos.Image")));
+			this->imgbtnMattos->Location = System::Drawing::Point(599, 206);
+			this->imgbtnMattos->Name = L"imgbtnMattos";
+			this->imgbtnMattos->Size = System::Drawing::Size(175, 55);
+			this->imgbtnMattos->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgbtnMattos->TabIndex = 54;
+			this->imgbtnMattos->TabStop = false;
+			this->imgbtnMattos->Visible = false;
+			// 
+			// imgbtnGroup
+			// 
+			this->imgbtnGroup->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgbtnGroup.Image")));
+			this->imgbtnGroup->Location = System::Drawing::Point(715, 533);
+			this->imgbtnGroup->Name = L"imgbtnGroup";
+			this->imgbtnGroup->Size = System::Drawing::Size(113, 110);
+			this->imgbtnGroup->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgbtnGroup->TabIndex = 55;
+			this->imgbtnGroup->TabStop = false;
+			this->imgbtnGroup->Visible = false;
+			this->imgbtnGroup->Click += gcnew System::EventHandler(this, &frmAbout::imgbtnGroup_Click);
+			this->imgbtnGroup->MouseEnter += gcnew System::EventHandler(this, &frmAbout::imgbtnGroup_MouseEnter);
+			this->imgbtnGroup->MouseLeave += gcnew System::EventHandler(this, &frmAbout::imgbtnGroup_MouseLeave);
 			// 
 			// frmAbout
 			// 
@@ -254,7 +369,13 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->BackColor = System::Drawing::Color::White;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1342, 681);
-			this->Controls->Add(this->imgbtnBack);
+			this->Controls->Add(this->imgbtnGroup);
+			this->Controls->Add(this->imgbtnMattos);
+			this->Controls->Add(this->imgbtnTeacher);
+			this->Controls->Add(this->imgbtnHomeAbout);
+			this->Controls->Add(this->imgbtnBackAbout);
+			this->Controls->Add(this->imgbtnNextPreview);
+			this->Controls->Add(this->imgbtnBackPreview);
 			this->Controls->Add(this->imgCode);
 			this->Controls->Add(this->imgDescription);
 			this->Controls->Add(this->imgPhoto);
@@ -285,7 +406,13 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgPhoto))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgDescription))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgCode))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnBack))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnBackPreview))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnNextPreview))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnBackAbout))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnHomeAbout))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnTeacher))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnMattos))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnGroup))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -424,16 +551,146 @@ private: System::Void btnRight_MouseEnter(System::Object^ sender, System::EventA
 private: System::Void btnRight_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
 	this->btnRight->Image = System::Drawing::Image::FromFile("imgMenu\\btnRight3.png");
 }
-private: System::Void imgbtnBack_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
-	this->imgbtnBack->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnBack2.png");
+private: System::Void imgbtnBackPreview_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnBackPreview->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnBack2.png");
 }
-private: System::Void imgbtnBack_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
-	this->imgbtnBack->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnBack.png");
+private: System::Void imgbtnBackPreview_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnBackPreview->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnBack.png");
 }
-private: System::Void imgbtnBack_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void imgbtnBackPreview_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	// close the aplication 
 	this->Close();
+}
+private: System::Void imgbtnNextPreview_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnNextPreview->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnNext2.png");
+}
+private: System::Void imgbtnNextPreview_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnNextPreview->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnNext.png");
+}
+private: System::Void imgbtnBackAbout_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnBackAbout->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnBack2.png");
+}
+private: System::Void imgbtnBackAbout_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnBackAbout->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnBack.png");
+}
+private: System::Void imgbtnBackAbout_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnBackPreview->Visible = true;
+	this->imgbtnNextPreview->Visible = true;
+	this->imgbtnHansel->Visible = false;
+	this->imgbtnCharlie->Visible = false;
+	this->imgbtnErick->Visible = false;
+	this->imgbtnBernardo->Visible = false;
+	this->imgbtnKathy->Visible = false;
+	this->imgPhoto->Visible = false;
+	this->imgDescription->Visible = false;
+	this->imgCode->Visible = false;
+	this->imgFondo->Image = System::Drawing::Image::FromFile("imgMenu\\frmPreviewAbout.png");
+	this->imgFlechaTemporal->Visible = false;
+	this->imgbtnBackAbout->Visible = false;
+	this->imgbtnHomeAbout->Visible = false;
+	this->imgbtnTeacher->Visible = false;
+	this->imgbtnMattos->Visible = false;
+	this->imgbtnGroup->Visible = false;
+}
+private: System::Void imgbtnNextPreview_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnBackPreview->Visible = false;
+	this->imgbtnHansel->Visible = true;
+	this->imgbtnCharlie->Visible = true;
+	this->imgbtnErick->Visible = true;
+	this->imgbtnBernardo->Visible = true;
+	this->imgbtnKathy->Visible = true;
+	this->imgPhoto->Visible = true;
+	this->imgDescription->Visible = true;
+	this->imgCode->Visible = true;
+	this->imgFondo->Image = System::Drawing::Image::FromFile("imgMenu\\imgfrmAbout.png");
+	this->imgbtnBackAbout->Visible = true;
+	this->imgbtnNextPreview->Visible = false;
+	this->imgFlechaTemporal->Visible = true;
+	this->btnRight->Visible = true;
+	this->btnLeft->Visible = true;
+	this->imgbtnHomeAbout->Visible = true;
+	this->imgbtnTeacher->Visible = true;
+	this->imgbtnMattos->Visible = false;
+	this->imgbtnGroup->Visible = true;
+	this->imgPhoto->Image = System::Drawing::Image::FromFile("imgMenu\\imgErick.png");
+	this->imgCode->Image = System::Drawing::Image::FromFile("imgMenu\\imgCodeErick.png");
+	this->imgDescription->Image = System::Drawing::Image::FromFile("imgMenu\\imgDescriptionErick.png");
+	this->imgbtnHansel->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreHansel2.png");
+	this->imgbtnCharlie->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreCharlie2.png");
+	this->imgbtnErick->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreErick.png");
+	this->imgbtnBernardo->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreBernardo2.png");
+	this->imgbtnKathy->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreKathy2.png");
+	this->imgPhoto->Image = System::Drawing::Image::FromFile("imgMenu\\imgErick.png");
+	this->imgDescription->Image = System::Drawing::Image::FromFile("imgMenu\\imgDescriptionErick.png");
+	this->imgCode->Image = System::Drawing::Image::FromFile("imgMenu\\imgCodeErick.png");
+}
+private: System::Void imgbtnHomeAbout_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnHomeAbout->Image = System::Drawing::Image::FromFile("imgMenu\\imgHomeAbout2.png");
+}
+private: System::Void imgbtnHomeAbout_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnHomeAbout->Image = System::Drawing::Image::FromFile("imgMenu\\imgHomeAbout.png");
+}
+private: System::Void imgbtnHomeAbout_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void imgbtnTeacher_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnTeacher->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnTeacher2.png");
+}
+private: System::Void imgbtnTeacher_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnTeacher->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnTeacher.png");
+}
+private: System::Void imgbtnTeacher_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnHansel->Visible = false;
+	this->imgbtnCharlie->Visible = false;
+	this->imgbtnErick->Visible = false;
+	this->imgbtnBernardo->Visible = false;
+	this->imgbtnMattos->Visible = true;
+	this->imgbtnKathy->Visible = false;
+	this->btnRight->Visible = false;
+	this->btnLeft->Visible = false;
+	this->imgbtnGroup->Visible = true;
+	this->imgPhoto->Image = System::Drawing::Image::FromFile("imgMenu\\imgMattos.png");
+	this->imgDescription->Image = System::Drawing::Image::FromFile("imgMenu\\imgDescriptionMattos.png");
+	this->imgCode->Visible = false;
+}
+private: System::Void imgbtnGroup_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnGroup->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnGroup2.png");
+}
+private: System::Void imgbtnGroup_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnGroup->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnGroup.png");
+}
+private: System::Void imgbtnGroup_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnBackPreview->Visible = false;
+	this->imgbtnHansel->Visible = true;
+	this->imgbtnCharlie->Visible = true;
+	this->imgbtnErick->Visible = true;
+	this->imgbtnBernardo->Visible = true;
+	this->imgbtnKathy->Visible = true;
+	this->imgPhoto->Visible = true;
+	this->imgDescription->Visible = true;
+	this->imgCode->Visible = true;
+	this->imgFondo->Image = System::Drawing::Image::FromFile("imgMenu\\imgfrmAbout.png");
+	this->imgbtnBackAbout->Visible = true;
+	this->imgbtnNextPreview->Visible = false;
+	this->imgFlechaTemporal->Visible = true;
+	this->btnRight->Visible = true;
+	this->btnLeft->Visible = true;
+	this->imgbtnHomeAbout->Visible = true;
+	this->imgbtnTeacher->Visible = true;
+	this->imgbtnGroup->Visible = true;
+	this->imgbtnMattos->Visible = false;
+	this->imgPhoto->Image = System::Drawing::Image::FromFile("imgMenu\\imgErick.png");
+	this->imgCode->Image = System::Drawing::Image::FromFile("imgMenu\\imgCodeErick.png");
+	this->imgDescription->Image = System::Drawing::Image::FromFile("imgMenu\\imgDescriptionErick.png");
+	this->imgbtnHansel->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreHansel2.png");
+	this->imgbtnCharlie->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreCharlie2.png");
+	this->imgbtnErick->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreErick.png");
+	this->imgbtnBernardo->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreBernardo2.png");
+	this->imgbtnKathy->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreKathy2.png");
+	this->imgPhoto->Image = System::Drawing::Image::FromFile("imgMenu\\imgErick.png");
+	this->imgDescription->Image = System::Drawing::Image::FromFile("imgMenu\\imgDescriptionErick.png");
+	this->imgCode->Image = System::Drawing::Image::FromFile("imgMenu\\imgCodeErick.png");
 }
 };
 }
