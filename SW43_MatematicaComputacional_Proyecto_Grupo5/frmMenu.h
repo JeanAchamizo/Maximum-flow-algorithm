@@ -67,7 +67,8 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 
 
 	private: System::ComponentModel::IContainer^ components;
-	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::PictureBox^ imgTitleMenu;
+
 	private: System::Windows::Forms::PictureBox^ imgbtnAbout;
 
 
@@ -84,6 +85,17 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	private: System::Windows::Forms::PictureBox^ imgDespedida;
 	private: System::Windows::Forms::PictureBox^ imgManual;
 	private: System::Windows::Forms::PictureBox^ imgLibro;
+	private: System::Windows::Forms::PictureBox^ imgFondo;
+	private: System::Windows::Forms::PictureBox^ imgbtnBack;
+
+
+
+
+
+
+
+
+
 
 
 
@@ -122,7 +134,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->btnIcon = (gcnew System::Windows::Forms::PictureBox());
 			this->btnLeft = (gcnew System::Windows::Forms::PictureBox());
 			this->btnRight = (gcnew System::Windows::Forms::PictureBox());
-			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->imgTitleMenu = (gcnew System::Windows::Forms::PictureBox());
 			this->imgbtnAbout = (gcnew System::Windows::Forms::PictureBox());
 			this->imgbtnInstructions = (gcnew System::Windows::Forms::PictureBox());
 			this->imgSelection = (gcnew System::Windows::Forms::PictureBox());
@@ -134,10 +146,12 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->imgDespedida = (gcnew System::Windows::Forms::PictureBox());
 			this->imgManual = (gcnew System::Windows::Forms::PictureBox());
 			this->imgLibro = (gcnew System::Windows::Forms::PictureBox());
+			this->imgFondo = (gcnew System::Windows::Forms::PictureBox());
+			this->imgbtnBack = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnIcon))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnLeft))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnRight))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgTitleMenu))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnAbout))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnInstructions))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgSelection))->BeginInit();
@@ -149,6 +163,8 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgDespedida))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgManual))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgLibro))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgFondo))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnBack))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnIcon
@@ -190,16 +206,16 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->btnRight->MouseEnter += gcnew System::EventHandler(this, &frmMenu::btnRight_MouseEnter);
 			this->btnRight->MouseLeave += gcnew System::EventHandler(this, &frmMenu::btnRight_MouseLeave);
 			// 
-			// pictureBox1
+			// imgTitleMenu
 			// 
-			this->pictureBox1->BackColor = System::Drawing::SystemColors::Window;
-			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(0, 12);
-			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(1345, 190);
-			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
-			this->pictureBox1->TabIndex = 16;
-			this->pictureBox1->TabStop = false;
+			this->imgTitleMenu->BackColor = System::Drawing::SystemColors::Window;
+			this->imgTitleMenu->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgTitleMenu.Image")));
+			this->imgTitleMenu->Location = System::Drawing::Point(0, 12);
+			this->imgTitleMenu->Name = L"imgTitleMenu";
+			this->imgTitleMenu->Size = System::Drawing::Size(1345, 190);
+			this->imgTitleMenu->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgTitleMenu->TabIndex = 16;
+			this->imgTitleMenu->TabStop = false;
 			// 
 			// imgbtnAbout
 			// 
@@ -311,13 +327,36 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			// imgLibro
 			// 
 			this->imgLibro->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgLibro.Image")));
-			this->imgLibro->Location = System::Drawing::Point(819, 309);
+			this->imgLibro->Location = System::Drawing::Point(819, 308);
 			this->imgLibro->Name = L"imgLibro";
 			this->imgLibro->Size = System::Drawing::Size(513, 314);
 			this->imgLibro->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
 			this->imgLibro->TabIndex = 27;
 			this->imgLibro->TabStop = false;
 			this->imgLibro->Visible = false;
+			// 
+			// imgFondo
+			// 
+			this->imgFondo->Location = System::Drawing::Point(0, 0);
+			this->imgFondo->Name = L"imgFondo";
+			this->imgFondo->Size = System::Drawing::Size(1345, 669);
+			this->imgFondo->TabIndex = 28;
+			this->imgFondo->TabStop = false;
+			this->imgFondo->Visible = false;
+			// 
+			// imgbtnBack
+			// 
+			this->imgbtnBack->BackColor = System::Drawing::Color::White;
+			this->imgbtnBack->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"imgbtnBack.Image")));
+			this->imgbtnBack->Location = System::Drawing::Point(612, 522);
+			this->imgbtnBack->Name = L"imgbtnBack";
+			this->imgbtnBack->Size = System::Drawing::Size(201, 110);
+			this->imgbtnBack->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->imgbtnBack->TabIndex = 48;
+			this->imgbtnBack->TabStop = false;
+			this->imgbtnBack->Visible = false;
+			this->imgbtnBack->MouseEnter += gcnew System::EventHandler(this, &frmMenu::imgbtnBack_MouseEnter);
+			this->imgbtnBack->MouseLeave += gcnew System::EventHandler(this, &frmMenu::imgbtnBack_MouseLeave);
 			// 
 			// frmMenu
 			// 
@@ -326,6 +365,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->BackColor = System::Drawing::SystemColors::Desktop;
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Zoom;
 			this->ClientSize = System::Drawing::Size(1344, 681);
+			this->Controls->Add(this->imgbtnBack);
 			this->Controls->Add(this->imgLibro);
 			this->Controls->Add(this->imgManual);
 			this->Controls->Add(this->imgDespedida);
@@ -340,7 +380,8 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->Controls->Add(this->btnRight);
 			this->Controls->Add(this->btnLeft);
 			this->Controls->Add(this->imgSelection);
-			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->imgTitleMenu);
+			this->Controls->Add(this->imgFondo);
 			this->DoubleBuffered = true;
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->MaximizeBox = false;
@@ -350,7 +391,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnIcon))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnLeft))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->btnRight))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgTitleMenu))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnAbout))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnInstructions))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgSelection))->EndInit();
@@ -362,6 +403,8 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgDespedida))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgManual))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgLibro))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgFondo))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnBack))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -464,15 +507,6 @@ private: System::Void btnIcon_Click(System::Object^ sender, System::EventArgs^ e
 		this->Visible = true;
 	}
 	if (Position == 2) {
-		Application::Exit();
-	}
-	if (Position == 3) {
-		frmStart^ frm = gcnew frmStart();
-		this->Visible = false;
-		frm->ShowDialog();
-		this->Visible = true;
-	}
-	if (Position == 4) {
 		//Llamar al formulario Theory
 		frmTheory^ frm = gcnew frmTheory();
 		//Esconder el formulario Menu
@@ -484,7 +518,55 @@ private: System::Void btnIcon_Click(System::Object^ sender, System::EventArgs^ e
 		//this->Close();
 		this->Visible = true;
 	}
-
+	if (Position == 3) {
+		frmStart^ frm = gcnew frmStart();
+		this->Visible = false;
+		frm->ShowDialog();
+		this->Visible = true;
+	}
+	if (Position == 4) {
+		Application::Exit();
+	}
+	if (Position == 5) {
+		//this->imgFondo->Image = System::Drawing::Image::FromFile("imgMenu\\imgfrmAbout.png");
+		//this->imgFondo->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+		//this->imgFondo->BackColor = System::Drawing::Color::White;
+		//this->BackColor = System::Drawing::SystemColors::Menu;
+		//Llamar al formulario About
+		frmAbout^ frm = gcnew frmAbout();
+		//Esconder el formulario Menu
+		//this->Visible = false;
+		this->Hide();
+		//Mostrar el contenido del formulario About
+		frm->ShowDialog();
+		//Cerrar el formulario About
+		//frmMenu::imgbtnBack->Enabled = true;
+		//imgbtnBack->Visible = true;
+		this->Close();
+		//this->Visible = true;
+		imgFondo->Visible = false;
+		imgGrafico->Visible = false;
+		imgLogoUPC->Visible = false;
+		imgDespedida->Visible = false;
+		imgManual->Visible = false;
+		imgLibro->Visible = false;
+		imgTitleMenu->Visible = false;
+		imgSelection->Visible = false;
+		btnIcon->Visible = false;
+		imgbtnAbout->Visible = false;
+		imgbtnExit->Visible = false;
+		imgbtnTheory->Visible = false;
+		imgbtnInstructions->Visible = false;
+		imgbtnStart->Visible = false;
+		btnLeft->Visible = false;
+		btnRight->Visible = false;
+		//imgFlechaTemporal->Visible = true;
+		//imgbtnBernardo->Visible = true;
+		//imgbtnCharlie->Visible = true;
+		//imgbtnErick->Visible = true;
+		//imgbtnHansel->Visible = true;
+		//imgbtnKathy->Visible = true;
+	}
 }
 
 private: System::Void btnLeft_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
@@ -661,6 +743,13 @@ private: Void PositionListCir(int Value) {
 	}
 
 	Position = Position + Value;
+}
+private: System::Void imgbtnBack_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnBack->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnBack2.png");
+}
+
+private: System::Void imgbtnBack_MouseLeave(System::Object^ sender, System::EventArgs^ e) {
+	this->imgbtnBack->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnBack.png");
 }
 };
 

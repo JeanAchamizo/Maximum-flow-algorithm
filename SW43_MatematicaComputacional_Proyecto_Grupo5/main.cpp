@@ -1,4 +1,5 @@
 #include "frmMenu.h"
+#include "frmAbout.h"
 //#include "Grafos.h"
 #include "CaminoMax.h"
 
