@@ -4,6 +4,7 @@
 #include "frmStart.h"
 #include "frmTheory.h"
 #include "frmAbout.h"
+#include "frmInstructions.h"
 
 
 namespace SW43MatematicaComputacionalProyectoGrupo5 {
@@ -445,7 +446,6 @@ private: System::Void btnIcon_MouseLeave(System::Object^ sender, System::EventAr
 
 //Evento cuando se realiza un click dentro del botón Start
 private: System::Void btnIcon_Click(System::Object^ sender, System::EventArgs^ e) {
-	
 	if (Position == 1) {
 		//Llamar al formulario About
 		//frmAbout^ frm = gcnew frmAbout();
@@ -457,17 +457,33 @@ private: System::Void btnIcon_Click(System::Object^ sender, System::EventArgs^ e
 		//Cerrar el formulario About
 		//this->Close();
 		//this->Visible = true;
-	}
-	if (Position == 2) {
 		//Llamar al formulario Theory
-		frmTheory^ frm = gcnew frmTheory();
-		//Esconder el formulario Menu
 		this->Visible = false;
+		frmInstructions^ frm = gcnew frmInstructions(closeAll);
+		//Esconder el formulario Menu
 		//this->Hide();
 		//Mostrar el contenido del formulario Theory
 		frm->ShowDialog();
 		//Cerrar el formulario Theory
 		//this->Close();
+		if (closeAll->GetValue()) {
+			Application::Exit();
+		}
+		this->Visible = true;
+	}
+	if (Position == 2) {
+		//Llamar al formulario Theory
+		this->Visible = false;
+		frmTheory^ frm = gcnew frmTheory(closeAll);
+		//Esconder el formulario Menu
+		//this->Hide();
+		//Mostrar el contenido del formulario Theory
+		frm->ShowDialog();
+		//Cerrar el formulario Theory
+		//this->Close();
+		if (closeAll->GetValue()) {
+			Application::Exit();
+		}
 		this->Visible = true;
 	}
 	if (Position == 3) {

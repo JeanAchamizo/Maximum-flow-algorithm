@@ -63,25 +63,25 @@ public:
 
             if (i<10) {
 
-                g->DrawString(" " + i + "  ", gcnew Font("Arial", tamLetras), Brushes::Black, (30 - Vertices) + i * (tamLetras * 3), 0);
+                g->DrawString(" " + i + "  ", gcnew Font("Arial", tamLetras), Brushes::White, (30 - Vertices) + i * (tamLetras * 3), 0);
             }
             
-            else g->DrawString( i + "  ", gcnew Font("Arial", tamLetras), Brushes::Black, (30 - Vertices) + i * (tamLetras * 3), 0);
+            else g->DrawString( i + "  ", gcnew Font("Arial", tamLetras), Brushes::White, (30 - Vertices) + i * (tamLetras * 3), 0);
         
         }
         
         for (int i = 0; i < Vertices; i++) {
 
             if (i < 10) {
-                   g->DrawString(" " + i + "  ",gcnew Font("Arial", tamLetras), Brushes::Black,0, (30 - Vertices) + (i) * (tamLetras + 5));
+                   g->DrawString(" " + i + "  ",gcnew Font("Arial", tamLetras), Brushes::White,0, (30 - Vertices) + (i) * (tamLetras + 5));
             }
-            else  g->DrawString( i + "  ",gcnew Font("Arial", tamLetras), Brushes::Black,0, (30 - Vertices) + (i) * (tamLetras + 5));
+            else  g->DrawString( i + "  ",gcnew Font("Arial", tamLetras), Brushes::White,0, (30 - Vertices) + (i) * (tamLetras + 5));
             
             for (int j = 0; j < Vertices; j++) {
 
                 g->DrawString("[" + MatrizAdyacente->ObtPosicion(j,i)->ObtCapacidad()
                     + ";" + MatrizAdyacente->ObtPosicion(j,i)->ObtAcumulados() + "]", 
-                    gcnew Font("Arial", tamLetras), Brushes::Black,(30-Vertices)+i*(tamLetras*3), (30 - Vertices)+(j)*(tamLetras +5));
+                    gcnew Font("Arial", tamLetras), Brushes::White,(30-Vertices)+i*(tamLetras*3), (30 - Vertices)+(j)*(tamLetras +5));
 
            }
        }

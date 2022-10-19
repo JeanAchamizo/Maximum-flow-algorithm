@@ -34,6 +34,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 		/// </summary>
 		~frmAbout()
 		{
+			delete closeAll;
 			if (components)
 			{
 				delete components;
@@ -563,7 +564,11 @@ private: System::Void imgbtnBackPreview_MouseLeave(System::Object^ sender, Syste
 private: System::Void imgbtnBackPreview_Click(System::Object^ sender, System::EventArgs^ e) {
 
 	// close the aplication 
-	this->Close();
+	SoundPlayer^ Click = gcnew SoundPlayer();
+	Click->SoundLocation = "imgMenu/soundbtnClick.wav";
+	Click->Play();
+	this->Visible = false;
+	//this->Close();
 }
 private: System::Void imgbtnNextPreview_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	this->imgbtnNextPreview->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnNext2.png");
@@ -578,6 +583,9 @@ private: System::Void imgbtnBackAbout_MouseLeave(System::Object^ sender, System:
 	this->imgbtnBackAbout->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnBack.png");
 }
 private: System::Void imgbtnBackAbout_Click(System::Object^ sender, System::EventArgs^ e) {
+	SoundPlayer^ Click = gcnew SoundPlayer();
+	Click->SoundLocation = "imgMenu/soundbtnClick.wav";
+	Click->Play();
 	this->imgbtnBackPreview->Visible = true;
 	this->imgbtnNextPreview->Visible = true;
 	this->imgbtnHansel->Visible = false;
@@ -595,8 +603,13 @@ private: System::Void imgbtnBackAbout_Click(System::Object^ sender, System::Even
 	this->imgbtnTeacher->Visible = false;
 	this->imgbtnMattos->Visible = false;
 	this->imgbtnGroup->Visible = false;
+	this->btnLeft->Visible = false;
+	this->btnRight->Visible = false;
 }
 private: System::Void imgbtnNextPreview_Click(System::Object^ sender, System::EventArgs^ e) {
+	SoundPlayer^ Click = gcnew SoundPlayer();
+	Click->SoundLocation = "imgMenu/soundbtnClick.wav";
+	Click->Play();
 	this->imgbtnBackPreview->Visible = false;
 	this->imgbtnHansel->Visible = true;
 	this->imgbtnCharlie->Visible = true;
@@ -635,7 +648,11 @@ private: System::Void imgbtnHomeAbout_MouseLeave(System::Object^ sender, System:
 	this->imgbtnHomeAbout->Image = System::Drawing::Image::FromFile("imgMenu\\imgHomeAbout.png");
 }
 private: System::Void imgbtnHomeAbout_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
+	SoundPlayer^ Click = gcnew SoundPlayer();
+	Click->SoundLocation = "imgMenu/soundbtnClick.wav";
+	Click->Play();
+	this->Visible = false;
+	//this->Close();
 }
 private: System::Void imgbtnTeacher_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
 	this->imgbtnTeacher->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnTeacher2.png");
@@ -644,6 +661,9 @@ private: System::Void imgbtnTeacher_MouseLeave(System::Object^ sender, System::E
 	this->imgbtnTeacher->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnTeacher.png");
 }
 private: System::Void imgbtnTeacher_Click(System::Object^ sender, System::EventArgs^ e) {
+	SoundPlayer^ Click = gcnew SoundPlayer();
+	Click->SoundLocation = "imgMenu/soundbtnClick.wav";
+	Click->Play();
 	this->imgbtnHansel->Visible = false;
 	this->imgbtnCharlie->Visible = false;
 	this->imgbtnErick->Visible = false;
@@ -664,6 +684,9 @@ private: System::Void imgbtnGroup_MouseLeave(System::Object^ sender, System::Eve
 	this->imgbtnGroup->Image = System::Drawing::Image::FromFile("imgMenu\\imgbtnGroup.png");
 }
 private: System::Void imgbtnGroup_Click(System::Object^ sender, System::EventArgs^ e) {
+	SoundPlayer^ Click = gcnew SoundPlayer();
+	Click->SoundLocation = "imgMenu/soundbtnClick.wav";
+	Click->Play();
 	this->imgbtnBackPreview->Visible = false;
 	this->imgbtnHansel->Visible = true;
 	this->imgbtnCharlie->Visible = true;
@@ -697,7 +720,7 @@ private: System::Void imgbtnGroup_Click(System::Object^ sender, System::EventArg
 }
 private: System::Void frmAbout_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
 
-	closeAll->SetValue(false);
+	closeAll->SetValue(true);
 }
 };
 }

@@ -118,6 +118,9 @@
     <ClInclude Include="frmAbout.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmInstructions.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmMenu.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -144,6 +147,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInstructions.resx">
+      <DependentUpon>frmInstructions.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.h</DependentUpon>
