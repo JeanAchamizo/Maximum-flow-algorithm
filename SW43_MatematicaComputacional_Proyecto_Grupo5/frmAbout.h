@@ -486,6 +486,7 @@ private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e
 		this->imgbtnKathy->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreKathy.png");
 		this->imgPhoto->Image = System::Drawing::Image::FromFile("imgMenu\\imgKathy.png");
 		this->imgCode->Image = System::Drawing::Image::FromFile("imgMenu\\imgCodeKathy.png");
+		this->imgDescription->Image = System::Drawing::Image::FromFile("imgMenu\\imgDescriptionKathy.png");
 	}
 }
 private: System::Void btnRight_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -541,6 +542,7 @@ private: System::Void btnRight_Click(System::Object^ sender, System::EventArgs^ 
 		this->imgbtnKathy->Image = System::Drawing::Image::FromFile("imgMenu\\imgNombreKathy.png");
 		this->imgPhoto->Image = System::Drawing::Image::FromFile("imgMenu\\imgKathy.png");
 		this->imgCode->Image = System::Drawing::Image::FromFile("imgMenu\\imgCodeKathy.png");
+		this->imgDescription->Image = System::Drawing::Image::FromFile("imgMenu\\imgDescriptionKathy.png");
 	}
 }
 private: System::Void btnLeft_MouseEnter(System::Object^ sender, System::EventArgs^ e) {
