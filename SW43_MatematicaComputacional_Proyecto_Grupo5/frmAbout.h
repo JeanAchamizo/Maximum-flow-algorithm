@@ -17,12 +17,13 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	public ref class frmAbout : public System::Windows::Forms::Form
 	{
 	public:
-		frmAbout(void)
+		frmAbout(CloseAll* CloseAll)
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			this->closeAll = CloseAll;
 			Position = 3;
 			
 		}
@@ -74,6 +75,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 
 
 		   int Position;
+		   CloseAll* closeAll;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -394,6 +396,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->Name = L"frmAbout";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Flujo Maximo";
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &frmAbout::frmAbout_FormClosed);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnKathy))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnBernardo))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->imgbtnErick))->EndInit();
@@ -691,6 +694,10 @@ private: System::Void imgbtnGroup_Click(System::Object^ sender, System::EventArg
 	this->imgPhoto->Image = System::Drawing::Image::FromFile("imgMenu\\imgErick.png");
 	this->imgDescription->Image = System::Drawing::Image::FromFile("imgMenu\\imgDescriptionErick.png");
 	this->imgCode->Image = System::Drawing::Image::FromFile("imgMenu\\imgCodeErick.png");
+}
+private: System::Void frmAbout_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
+
+	closeAll->SetValue(false);
 }
 };
 }

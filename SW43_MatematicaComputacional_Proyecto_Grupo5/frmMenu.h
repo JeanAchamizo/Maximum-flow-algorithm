@@ -5,6 +5,7 @@
 #include "frmTheory.h"
 #include "frmAbout.h"
 
+
 namespace SW43MatematicaComputacionalProyectoGrupo5 {
 
 	using namespace System;
@@ -28,6 +29,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			//TODO: agregar código de constructor aquí
 			//
 			Position = 3;
+			closeAll = new CloseAll(false);
 		}
 
 	protected:
@@ -70,6 +72,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 		/// Variable del diseñador necesaria.
 		/// </summary>
 		int Position;
+		CloseAll* closeAll;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -468,18 +471,30 @@ private: System::Void btnIcon_Click(System::Object^ sender, System::EventArgs^ e
 		this->Visible = true;
 	}
 	if (Position == 3) {
-		frmStart^ frm = gcnew frmStart();
 		this->Visible = false;
+		frmStart^ frm = gcnew frmStart(closeAll);
 		frm->ShowDialog();
+		if (closeAll->GetValue()) {
+			Application::Exit();
+		}
 		this->Visible = true;
+
 	}
 	if (Position == 4) {
 		Application::Exit();
 	}
 	if (Position == 5) {
 		//Llamar al formulario About
-		frmAbout^ frm = gcnew frmAbout();
+		this->Visible = false;
+		frmAbout^ frm = gcnew frmAbout(closeAll);
+		
 		frm->ShowDialog();
+
+		if (closeAll->GetValue()) {
+			Application::Exit();
+		}
+
+		this->Visible = true;
 	}
 }
 
@@ -499,7 +514,6 @@ private: System::Void btnRight_MouseLeave(System::Object^ sender, System::EventA
 	this->btnRight->Image = System::Drawing::Image::FromFile("imgMenu\\btnRight.png");
 	this->imgSelection->Image = System::Drawing::Image::FromFile("imgMenu\\imgPanelSelection.png");
 }
-
 private: System::Void btnLeft_Click(System::Object^ sender, System::EventArgs^ e) {
 	SoundPlayer^ Arrow = gcnew SoundPlayer();
 	Arrow->SoundLocation = "imgMenu/soundArrow.wav";
@@ -649,7 +663,6 @@ private: System::Void btnRight_Click(System::Object^ sender, System::EventArgs^ 
 		imgLibro->Visible = false;
 	}
 }
-
 private: Void PositionListCir(int Value) {
 	
 	// si la posicion es menor 5 y se le tiene que sumar

@@ -18,13 +18,13 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 	public ref class frmStart : public System::Windows::Forms::Form
 	{
 	public:
-		frmStart(void)
+		frmStart(CloseAll* CloseAll)
 		{
 			InitializeComponent();
 			//
 			//TODO: agregar código de constructor aquí
 			//
-
+			this->closeAll = CloseAll;
 			solucion = new CaminoMax;
 			
 			gpanel1= panel1->CreateGraphics();
@@ -52,6 +52,8 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 		/// </summary>
 		~frmStart()
 		{
+
+			delete closeAll;
 			if (components)
 			{
 				delete components;
@@ -73,6 +75,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 		Bitmap^ paisaje;
 		int CirElegido;
 		bool ClickComp;
+		CloseAll* closeAll;
 
 		BufferedGraphicsContext^ space;
 		BufferedGraphics^ buffer;
@@ -570,6 +573,7 @@ namespace SW43MatematicaComputacionalProyectoGrupo5 {
 			this->Name = L"frmStart";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"frmStart";
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &frmStart::frmStart_FormClosed);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
@@ -605,8 +609,6 @@ private: System::Void timer1_Tick(System::Object^ sender, System::EventArgs^ e) 
 	buffer1->Render(gpanel1);
 	
 	buffer3->Render(gpanel3);
-
-
 
 
 }
@@ -737,5 +739,12 @@ private: System::Void panel2_MouseMove(System::Object^ sender, System::Windows::
 		
 	}
 
+private: System::Void frmStart_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
+
+	std::cout << "se cerro el formulario" << endl;
+	timer1->Enabled = false;
+	closeAll->SetValue(true);
+	
+}
 };
 }
